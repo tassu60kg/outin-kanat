@@ -6,4 +6,4 @@ Definition of done = toimii ja testattu
 
 ## Asennus- ja käyttöohje
 
-Ohje tähän
+Ohje tähän.

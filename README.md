@@ -6,6 +6,8 @@ Definition of done = toimii ja testattu
 
 ## Asennus- ja käyttöohje
 
-Ohje tähän.
+1. kloonaa repositorio (esim git clone)
+2. aja "poetry install" pohjakansiossa
+3. ???
 
 [![CI](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml/badge.svg)](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml)

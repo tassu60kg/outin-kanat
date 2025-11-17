@@ -4,6 +4,8 @@
 
 Definition of done = toimii ja testattu
 
+[![CI](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml/badge.svg)](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml)
+
 ## Asennus- ja käyttöohje
 
 PostgreSQL asennusohjeet:
@@ -77,10 +79,4 @@ Käynnistä sovellus:
 
 ```
 flask run
-```
-
-[![CI](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml/badge.svg)](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml)
-
-```
-
 ```

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app=Flask(__name__)
 
@@ -9,3 +9,8 @@ def index():
 @app.route("/lomake")
 def form():
     return render_template("lomake.html")
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    key = request.form["cite_key"]
+    return key

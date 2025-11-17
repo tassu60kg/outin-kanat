@@ -6,8 +6,81 @@ Definition of done = toimii ja testattu
 
 ## Asennus- ja käyttöohje
 
-1. kloonaa repositorio (esim git clone)
-2. aja "poetry install" pohjakansiossa
-3. ???
+PostgreSQL asennusohjeet:
+
+Voit luoda PostgreSQL:ään oman tietokannan seuraavasti
+
+```
+$ psql
+user=# CREATE DATABASE <tietokannan-nimi>;
+```
+
+Repositorio asennusohjeet:
+
+Luo hakemisto tälle repolle esim:
+
+```
+mkdir testi
+```
+
+ja luo reitti sille:
+
+```
+cd testi
+```
+
+Kloonaa repositorio omalle koneellesi komennolla
+
+```
+git clone git@github.com:tassu60kg/outin-kanat.git
+```
+
+Tämän jälkeen avaa reitti hakemistoon
+
+```
+cd testi/
+```
+
+(näet komennolla ls, oletko repositiossa, pitäisi näkyä kaikki sovelluksen osat esim app.py, schema.sql yms. Jos ei näy, niin sinun pitää mennä ns syvemmälle, avaa siis tiedosto koneella ja katso reitti, se voi olla esim. Documents/testi/repon_nimi/ ja yritä sitten: cd Documents/testi/repon_nimi/)
+
+Luo myös oma .env kansio tähän lokaaliin repoon, jonne teet oman salaisen avaimen seuraavasti:
+
+```
+SECRET_KEY=(itse luomasi sercetkey)
+```
+
+Lisää .env kansioon myös tekemäsi tietokannan osoite seuraavasti, esim: jos loit tietokannan nimeltä testi, tulisi uudeksi tietokannan osoitteeksi postgresql:///testi
+
+```
+DATABASE_URL=postgresql:///testi
+```
+
+Luo schemat tietokantaan:
+
+```
+psql -d (oman tietokannan nimi) < schema.sql
+```
+
+Aja sitten pohjakansiossa:
+
+```
+poetry install
+```
+
+virtuaaliympäristön saa auki:
+
+```
+eval $(poetry env activate)
+```
+
+Käynnistä sovellus:
+
+```
+flask run
+```
 
 [![CI](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml/badge.svg)](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml)
+
+```
+
+```

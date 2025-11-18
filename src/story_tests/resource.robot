@@ -1,5 +1,5 @@
 *** Settings ***
-Library SeleniumLibrary
+Library  SeleniumLibrary
 
 *** Variables ***
 ${SERVER}    localhost:5000

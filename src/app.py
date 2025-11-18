@@ -5,7 +5,7 @@ from config import app, db
 @app.route("/")
 def index():
     sql = repositories.reference_repositories.get_all()
-    print(sql)
+    sql = map(lambda i : i[0], sql)
     return render_template("index.html", sql=sql)
 
 @app.route("/lomake")

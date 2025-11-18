@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request
 import repositories.reference_repositories
 from config import app, db
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    sql = repositories.reference_repositories.get_all()
+    print(sql)
+    return render_template("index.html", sql=sql)
 
 @app.route("/lomake")
 def form():
@@ -19,4 +21,4 @@ def submit():
     publisher = request.form["publisher"]
     ISBN = request.form["ISBN"]
     repositories.reference_repositories.add_book(key, author, title, year, publisher, ISBN)
-    return render_template("index.html")
+    return redirect("/")

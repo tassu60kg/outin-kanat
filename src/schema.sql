@@ -9,5 +9,6 @@ CREATE TABLE bib_references (
     journal TEXT,
     publisher TEXT,
     volume TEXT,
-    pages TEXT
+    pages TEXT,
+    ISBN TEXT
 );

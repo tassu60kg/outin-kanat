@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request
 import repositories.reference_repositories
 from config import app, db
+from util import validate_year
 
 @app.route("/")
 def index():
@@ -20,5 +21,10 @@ def submit():
     year = request.form["year"]
     publisher = request.form["publisher"]
     ISBN = request.form["ISBN"]
-    repositories.reference_repositories.add_book(key, author, title, year, publisher, ISBN)
+
+    try:
+        validate_year(int(year))
+        repositories.reference_repositories.add_book(key, author, title, year, publisher, ISBN)
+    except Exception as error:
+        raise Exception("Virheellinen vuosi: " + str(error))
     return redirect("/")

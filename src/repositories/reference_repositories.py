@@ -1,5 +1,5 @@
-from config import db
 from sqlalchemy import text
+from config import db
 
 def add_book(cite_key, author, title, year, publisher, ISBN):
     sql_insert =  """INSERT INTO bib_references

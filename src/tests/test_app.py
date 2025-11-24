@@ -11,5 +11,3 @@ class TestValidation(unittest.TestCase):
     def test_vuosi_on_negatiivinen_integer(self):
         with self.assertRaises(UserInputError):
             validate_year(-5)
-
-

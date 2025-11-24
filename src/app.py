@@ -1,6 +1,6 @@
-from flask import Flask, redirect, render_template, request
+from flask import redirect, render_template, request
 import repositories.reference_repositories
-from config import app, db
+from config import app
 from util import validate_year
 
 @app.route("/")
@@ -25,6 +25,6 @@ def submit():
     try:
         validate_year(int(year))
         repositories.reference_repositories.add_book(key, author, title, year, publisher, ISBN)
-    except Exception as error:
-        raise Exception("Virheellinen vuosi: " + str(error))
+    except ValueError as error:
+        raise ValueError("Virheellinen vuosi: " + str(error)) from error
     return redirect("/")

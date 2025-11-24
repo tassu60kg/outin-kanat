@@ -14,12 +14,7 @@ def add_book(cite_key, author, title, year, publisher, ISBN):
     db.session.commit()
 
 def get_all():
-    sql_insert = """SELECT (bib_references.cite_key,
-                        bib_references.author,
-                        bib_references.title,
-                        bib_references.year,
-                        bib_references.publisher,
-                        bib_references.ISBN)
+    sql_insert = """SELECT *
               FROM bib_references"""
     result = db.session.execute(text(sql_insert))
     return result.fetchall()

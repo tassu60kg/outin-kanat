@@ -40,4 +40,5 @@ def remove_reference(reference_id):
             repositories.reference_repositories.remove_reference(reference_id)
             flash("Viite poistettu onnistuneesti")
             return redirect("/")
-        return redirect("/")
+
+    return redirect("/")

@@ -30,17 +30,14 @@ def submit():
 
 @app.route("/remove_reference/<int:reference_id>", methods=["GET", "POST"])
 def remove_reference(reference_id):
-
     reference = repositories.reference_repositories.get_reference_by_id(reference_id)
 
     if request.method == "GET":
         return render_template("remove_reference.html", reference=reference)
-    
+
     if request.method == "POST":
         if "remove" in request.form:
             repositories.reference_repositories.remove_reference(reference_id)
             flash("Viite poistettu onnistuneesti")
             return redirect("/")
-        
-        elif "back" in request.form:
-            return redirect("/")
+        return redirect("/")

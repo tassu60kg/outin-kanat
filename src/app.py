@@ -5,9 +5,8 @@ from util import validate_year
 
 @app.route("/")
 def index():
-    sql = repositories.reference_repositories.get_all()
-    sql = map(lambda i : i[0], sql)
-    return render_template("index.html", sql=sql)
+    references = repositories.reference_repositories.get_all()
+    return render_template("index.html", reference = references)
 
 @app.route("/lomake")
 def form():

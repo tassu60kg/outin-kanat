@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>temp</title>
-</head>
+  </head>
+  <style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 
-<body>    
-<a href="/lomake">lomake</a>
-<ul>
-    {% for i in sql %}
-<li><a>{{ i }}</a></li>
-    {% endfor %}
-</ul>
-</body>
+  <body>
+    <a href="/lomake">lomake</a>
 
+    <table style="width: 100%">
+      <tr>
+        <th>Type</th>
+        <th>Cyte key</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Publisher</th>
+        <th>Journal</th>
+        <th>Booktitle</th>
+        <th>Volume</th>
+        <th>Pages</th>
+        <th>ISBN</th>
+      </tr>
+      {% for reference in reference %}
+        <tr>
+            <td>{{reference[2]}}</td>
+            <td>{{reference[1]}}</td>
+            <td>{{reference[3]}}</td>
+            <td>{{reference[4]}}</td>
+            <td>{{reference[5]}}</td>
+            <td>{{reference[8]}}</td>
+            <td>{{reference[7]}}</td>
+            <td>{{reference[6]}}</td>
+            <td>{{reference[9]}}</td>
+            <td>{{reference[10]}}</td>
+            <td>{{reference[11]}}</td>
+        </tr>
+        {% endfor %}
+      </tr>
+    </table>
+  </body>
 </html>

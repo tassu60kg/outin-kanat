@@ -1,7 +1,7 @@
 name: CI
 
 env:
-  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testi
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432
   TEST_ENV: true
   SECRET_KEY: salainenavainjee
 

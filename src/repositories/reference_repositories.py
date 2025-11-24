@@ -18,3 +18,7 @@ def get_all():
               FROM bib_references"""
     result = db.session.execute(text(sql_insert))
     return result.fetchall()
+
+def remove_reference(reference_id):
+    sql = "DELETE FROM bib_references WHERE id = :id"
+    db.session.execute(text(sql), {"id": reference_id})

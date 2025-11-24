@@ -19,6 +19,12 @@ def get_all():
     result = db.session.execute(text(sql_insert))
     return result.fetchall()
 
+def get_reference_by_id(reference_id):
+    sql = "SELECT * FROM bib_references WHERE id = :id"
+    result = db.session.execute(text(sql), {"id": reference_id})
+    return result.fetchone()
+
 def remove_reference(reference_id):
     sql = "DELETE FROM bib_references WHERE id = :id"
     db.session.execute(text(sql), {"id": reference_id})
+    db.session.commit()

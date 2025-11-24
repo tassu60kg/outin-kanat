@@ -10,12 +10,16 @@ table, th, td {
 </style>
 
   <body>
+    {% for message in get_flashed_messages() %}
+    <p>
+      <b>{{ message }}</b>
+    </p>
+    {% endfor %}
     <a href="/lomake">lomake</a>
-
     <table style="width: 100%">
       <tr>
         <th>Type</th>
-        <th>Cyte key</th>
+        <th>Cite key</th>
         <th>Title</th>
         <th>Author</th>
         <th>Year</th>

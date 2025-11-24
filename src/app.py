@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request
+from flask import flash, redirect, render_template, request
 import repositories.reference_repositories
 from config import app
 from util import validate_year
@@ -27,3 +27,20 @@ def submit():
     except ValueError as error:
         raise ValueError("Virheellinen vuosi: " + str(error)) from error
     return redirect("/")
+
+@app.route("/remove_reference/<int:reference_id>", methods=["GET", "POST"])
+def remove_reference(reference_id):
+
+    reference = repositories.reference_repositories.get_reference_by_id(reference_id)
+
+    if request.method == "GET":
+        return render_template("remove_reference.html", reference=reference)
+    
+    if request.method == "POST":
+        if "remove" in request.form:
+            repositories.reference_repositories.remove_reference(reference_id)
+            flash("Viite poistettu onnistuneesti")
+            return redirect("/")
+        
+        elif "back" in request.form:
+            return redirect("/")

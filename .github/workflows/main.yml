@@ -1,5 +1,10 @@
 name: CI
 
+env:
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testi
+  TEST_ENV: true
+  SECRET_KEY: salainenavainjee
+
 on:
   push:
     branches: [main]

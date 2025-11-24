@@ -29,4 +29,4 @@ jobs:
         run: poetry run pylint src
 
       - name: Run Robot Framework tests
-        run: poetry run robot src/story_tests
+        run: bash run_robot_tests.sh

@@ -1,5 +1,10 @@
 name: CI
 
+env:
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testi
+  TEST_ENV: true
+  SECRET_KEY: salainenavainjee
+
 on:
   push:
     branches: [main]
@@ -25,8 +30,15 @@ jobs:
       - name: Run tests
         run: poetry run coverage run --branch -m pytest
 
-      - name: Run pylint
-        run: poetry run pylint src
+      - name: Setup chromedriver
+        uses: nanasess/setup-chromedriver@master
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
 
       - name: Run Robot Framework tests
         run: bash run_robot_tests.sh
+
+      - name: Run pylint
+        run: poetry run pylint src

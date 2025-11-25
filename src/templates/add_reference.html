@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a reference</title>
+  </head>
+
+  <body>
+    <h1>Add a reference:</h1>
+
+    <form action="/submit" method="post">
+      <p>
+        <label
+          >Type:
+          <select name="type">
+            <option value="book">Book</option>
+            <option value="article">Article</option>
+            <option value="inproceedings">Inproceedings</option>
+          </select>
+        </label>
+      </p>
+
+      <p>cite key <input type="text" name="cite_key" /></p>
+      <p>author <input type="text" name="author" /></p>
+      <p>title <input type="text" name="title" /></p>
+      <p>year <input type="text" name="year" /></p>
+
+      <p>publisher <input type="text" name="publisher" /></p>
+      <p>ISBN <input type="text" name="ISBN" /></p>
+
+      <p>journal <input type="text" name="journal" /></p>
+      <p>booktitle <input type="text" name="booktitle" /></p>
+
+      <p>volume <input type="text" name="volume" /></p>
+      <p>pages <input type="text" name="pages" /></p>
+
+      <input type="submit" value="send" />
+    </form>
+  </body>
+</html>

@@ -8,24 +8,30 @@ def index():
     references = repositories.reference_repositories.get_all()
     return render_template("index.html", reference = references)
 
-@app.route("/lomake")
+@app.route("/add_reference")
 def form():
-    return render_template("lomake.html")
+    return render_template("add_reference.html")
 
 @app.route("/submit", methods=["POST", "GET"])
 def submit():
-    key = request.form["cite_key"]
-    author = request.form["author"]
-    title = request.form["title"]
-    year = request.form["year"]
-    publisher = request.form["publisher"]
-    ISBN = request.form["ISBN"]
+    data = {
+        "cite_key": request.form.get("cite_key"),
+        "type": request.form.get("type"),
+        "author": request.form.get("author"),
+        "title": request.form.get("title"),
+        "year": request.form.get("year"),
+        "publisher": request.form.get("publisher"),
+        "ISBN": request.form.get("ISBN"),
+        "journal": request.form.get("journal"),
+        "booktitle": request.form.get("booktitle"),
+        "volume": request.form.get("volume"),
+        "pages": request.form.get("pages"),
+    }
 
-    try:
-        validate_year(int(year))
-        repositories.reference_repositories.add_book(key, author, title, year, publisher, ISBN)
-    except ValueError as error:
-        raise ValueError("Virheellinen vuosi: " + str(error)) from error
+    validate_year(int(data["year"]))
+
+    repositories.reference_repositories.add_reference(**data)
+
     return redirect("/")
 
 @app.route("/remove_reference/<int:reference_id>", methods=["GET", "POST"])
@@ -38,7 +44,7 @@ def remove_reference(reference_id):
     if request.method == "POST":
         if "remove" in request.form:
             repositories.reference_repositories.remove_reference(reference_id)
-            flash("Viite poistettu onnistuneesti")
+            flash("Reference removed successfully.")
             return redirect("/")
 
     return redirect("/")

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Poista viite</title>
-</head>
+  <head>
+    <title>Delete reference</title>
+  </head>
 
-<body>
-    <h2> {{ reference.title }} –– {{ reference.author }}</h2>
-    <p>Haluatko varmasti poistaa tämän viitteen?</p>
+  <body>
+    <h2>{{ reference.title }} –– {{ reference.author }}</h2>
+    <p>Are you sure you want to delete this reference?</p>
     <form action="/remove_reference/{{ reference.id }}" method="post">
-        <input type="submit" name="remove" value="Poista viite">
-        <input type="submit" name="back" value="Peruuta">
+      <input type="submit" name="remove" value="Delete reference" />
+      <input type="submit" name="back" value="Cancel" />
     </form>
-</body>
+  </body>
 </html>

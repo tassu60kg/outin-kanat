@@ -4,10 +4,12 @@
     <title>temp</title>
   </head>
   <style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
 
   <body>
     {% for message in get_flashed_messages() %}
@@ -15,7 +17,7 @@ table, th, td {
       <b>{{ message }}</b>
     </p>
     {% endfor %}
-    <a href="/lomake">lomake</a>
+    <a href="/add_reference">Add reference</a>
     <table style="width: 100%">
       <tr>
         <th>Type</th>
@@ -31,19 +33,19 @@ table, th, td {
         <th>ISBN</th>
       </tr>
       {% for reference in reference %}
-        <tr>
-            <td>{{reference[2]}}</td>
-            <td>{{reference[1]}}</td>
-            <td>{{reference[3]}}</td>
-            <td>{{reference[4]}}</td>
-            <td>{{reference[5]}}</td>
-            <td>{{reference[8]}}</td>
-            <td>{{reference[7]}}</td>
-            <td>{{reference[6]}}</td>
-            <td>{{reference[9]}}</td>
-            <td>{{reference[10]}}</td>
-            <td>{{reference[11]}}</td>
-            <td><a href="/remove_reference/{{ reference.id }}">Poista viite</a></td>
+      <tr>
+        <td>{{reference[2]}}</td>
+        <td>{{reference[1]}}</td>
+        <td>{{reference[3]}}</td>
+        <td>{{reference[4]}}</td>
+        <td>{{reference[5]}}</td>
+        <td>{{reference[8]}}</td>
+        <td>{{reference[7]}}</td>
+        <td>{{reference[6]}}</td>
+        <td>{{reference[9]}}</td>
+        <td>{{reference[10]}}</td>
+        <td>{{reference[11]}}</td>
+        <td><a href="/remove_reference/{{ reference.id }}">Delete</a></td>
         {% endfor %}
       </tr>
     </table>

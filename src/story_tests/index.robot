@@ -38,7 +38,8 @@ User can delete reference
 *** Keywords ***
 Setup Suite
     Open And Configure Browser
-    Empty References
+    ${test_env}=    Get Environment Variable    TEST_ENV    false
+    Run Keyword If    '${test_env}' == 'false'    Empty References
 
 Empty References
     Go To    ${HOME_URL}

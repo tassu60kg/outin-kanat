@@ -1,4 +1,5 @@
 *** Settings ***
+Library   OperatingSystem
 Library  SeleniumLibrary
 
 *** Variables ***
@@ -97,5 +98,5 @@ Check Reference is Deleted
 
 Delete Any Reference
     Click Link    Delete
-    Click Button    Delete reference
+    Click Button  Delete reference
 

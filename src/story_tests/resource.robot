@@ -55,7 +55,7 @@ Fill Reference With Article Test
     Input Text    name=journal     American Educator
     Input Text    name=year        1991
     Input Text    name=volume      3
-    Input Text    name=pages       38--46
+    Input Text    name=pages       38–46
 
 Add Inproceedings Reference
     Click Link  Add reference
@@ -95,8 +95,6 @@ Delete Reference
 Check Reference is Deleted
     Page Should Not Contain Element  xpath=//table[cite_key="kesakirja"]
 
-
-*** Keywords ***
 Delete Any Reference
     Click Link    Delete
     Click Button    Delete reference

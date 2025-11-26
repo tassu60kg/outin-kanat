@@ -75,4 +75,4 @@ def update_reference(reference_id):
             flash("Reference updated successfully.")
             return redirect("/")
 
-        return redirect("/")
+    return redirect("/")

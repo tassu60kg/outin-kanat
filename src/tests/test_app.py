@@ -11,3 +11,7 @@ class TestValidation(unittest.TestCase):
     def test_year_is_negative_integer(self):
         with self.assertRaises(UserInputError):
             validate_year(-5)
+
+    def test_year_is_non_integer(self):
+        with self.assertRaises(UserInputError):
+            validate_year("abc")

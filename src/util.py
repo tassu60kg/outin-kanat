@@ -2,5 +2,5 @@ class UserInputError(Exception):
     pass
 
 def validate_year(year):
-    if year < 0 or not isinstance(year, int):
-        raise UserInputError("Vuoden tulee olla positiivinen kokonaisluku.")
+    if not isinstance(year, int) or year < 0:
+        raise UserInputError("Year must be a positive integer.")

@@ -27,14 +27,12 @@ def submit():
         "volume": request.form.get("volume"),
         "pages": request.form.get("pages"),
     }
-
     if "send" in request.form:
         validate_year(int(data["year"]))
         repositories.reference_repositories.add_reference(**data)
         return redirect("/")
-    
-    return redirect("/")
 
+    return redirect("/")
 
 @app.route("/remove_reference/<int:reference_id>", methods=["GET", "POST"])
 def remove_reference(reference_id):
@@ -76,5 +74,5 @@ def update_reference(reference_id):
             repositories.reference_repositories.update_reference(**data)
             flash("Reference updated successfully.")
             return redirect("/")
-        
+
         return redirect("/")

@@ -14,6 +14,14 @@ def form():
 
 @app.route("/submit", methods=["POST", "GET"])
 def submit():
+    if "back" in request.form:
+        return render_template("add_reference.html", ref_type=None)
+
+    selected_type = request.form.get("type")
+
+    if "send" not in request.form:
+        return render_template("add_reference.html", ref_type=selected_type)
+
     data = {
         "cite_key": request.form.get("cite_key"),
         "type": request.form.get("type"),

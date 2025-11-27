@@ -3,10 +3,9 @@
   <head>
     <title>Add a reference</title>
   </head>
-
   <body>
-    <h1>Add a reference:</h1>
-
+    {% if not ref_type %}
+    <h2>Select a reference type:</h2>
     <form action="/submit" method="post">
       <p>
         <label
@@ -18,23 +17,34 @@
           </select>
         </label>
       </p>
+      <input type="submit" name="choose_type" value="Continue" />
+    </form>
+    {% endif %} {% if ref_type %}
+    <h2>Add {{ ref_type }} reference</h2>
+
+    <form action="/submit" method="post">
+      <input type="hidden" name="type" value="{{ ref_type }}" />
 
       <p>cite key <input type="text" name="cite_key" /></p>
       <p>author <input type="text" name="author" /></p>
       <p>title <input type="text" name="title" /></p>
-      <p>year <input type="text" name="year" /></p>
 
+      {% if ref_type in ["book", "inproceedings", "article"] %}
+      <p>year <input type="text" name="year" /></p>
+      {% endif %} {% if ref_type == "book" %}
       <p>publisher <input type="text" name="publisher" /></p>
       <p>ISBN <input type="text" name="ISBN" /></p>
-
-      <p>journal <input type="text" name="journal" /></p>
+      {% endif %} {% if ref_type == "inproceedings" %}
       <p>booktitle <input type="text" name="booktitle" /></p>
-
+      {% endif %} {% if ref_type == "article" %}
+      <p>journal <input type="text" name="journal" /></p>
       <p>volume <input type="text" name="volume" /></p>
       <p>pages <input type="text" name="pages" /></p>
+      {% endif %}
 
       <input type="submit" name="send" value="Send" />
       <input type="submit" name="back" value="Back" />
     </form>
+    {% endif %}
   </body>
 </html>

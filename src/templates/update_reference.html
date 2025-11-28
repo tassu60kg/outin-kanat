@@ -1,58 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Edit reference</title>
-    </head>
-    <h3>Edit reference</h3>
+  <head>
+    <title>Edit reference</title>
+  </head>
+  <body>
+    <h3>Edit {{ reference.type }} reference</h3>
 
-    <body>
     <form action="/update_reference/{{ reference.id }}" method="post">
-        <p>
-            <label for="type">Type:</label> <br />
-            <input type="text" name="type" id="type" value="{{ reference.type }}" />
-        </p>
-        <p>
-            <label for="cite_key">Cite Key:</label> <br />
-            <input type="text" name="cite_key" id="cite_key" value="{{ reference.cite_key }}" />
-        </p>
-        <p>
-            <label for="title">Title:</label> <br />
-            <input type="text" name="title" id="title" value="{{ reference.title }}" />
-        </p>
-        <p>
-            <label for="author">Author:</label> <br />
-            <input type="text" name="author" id="author" value="{{ reference.author }}" />
-        </p>
-        <p>
-            <label for="year">Year:</label> <br />
-            <input type="int" name="year" id="year" value="{{ reference.year }}" />
-        </p>
-        <p>
-            <label for="publisher">Publisher:</label> <br />
-            <input type="text" name="publisher" id="publisher" value="{{ reference.publisher }}" />
-        </p>
-        <p>
-            <label for="journal">Journal:</label> <br />
-            <input type="text" name="journal" id="journal" value="{{ reference.journal }}" />
-        </p>
-        <p>
-            <label for="booktitle">Booktitle:</label> <br />
-            <input type="text" name="booktitle" id="booktitle" value="{{ reference.booktitle }}" />
-        </p>
-        <p>
-            <label for="volume">Volume:</label> <br />
-            <input type="text" name="volume" id="volume" value="{{ reference.volume }}" />
-        </p>
-        <p>
-            <label for="pages">Pages:</label> <br />
-            <input type="text" name="pages" id="pages" value="{{ reference.pages }}" />
-        </p>
-        <p>
-            <label for="isbn">ISBN:</label> <br />
-            <input type="text" name="isbn" id="isbn" value="{{ reference.isbn }}" />
-        </p>
-        <input type="submit" name="update" value="Update reference" />
-        <input type="submit" name="back" value="Back" />
+      <p>
+        <label
+          >Cite Key:<br />
+          <input type="text" name="cite_key" value="{{ reference.cite_key }}" />
+        </label>
+      </p>
+
+      <p>
+        <label
+          >Author:<br />
+          <input type="text" name="author" value="{{ reference.author }}" />
+        </label>
+      </p>
+
+      <p>
+        <label
+          >Title:<br />
+          <input type="text" name="title" value="{{ reference.title }}" />
+        </label>
+      </p>
+      <p>
+        <label
+          >Year:<br />
+          <input type="text" name="year" value="{{ reference.year }}" />
+        </label>
+      </p>
+      {% if reference.type == "book" %}
+      <p>
+        <label
+          >Publisher:<br />
+          <input
+            type="text"
+            name="publisher"
+            value="{{ reference.publisher }}"
+          />
+        </label>
+      </p>
+      <p>
+        <label
+          >ISBN:<br />
+          <input type="text" name="isbn" value="{{ reference.isbn }}" />
+        </label>
+      </p>
+      {% endif %} {% if reference.type == "inproceedings" %}
+      <p>
+        <label
+          >Booktitle:<br />
+          <input
+            type="text"
+            name="booktitle"
+            value="{{ reference.booktitle }}"
+          />
+        </label>
+      </p>
+      {% endif %} {% if reference.type == "article" %}
+      <p>
+        <label
+          >Journal:<br />
+          <input type="text" name="journal" value="{{ reference.journal }}" />
+        </label>
+      </p>
+      <p>
+        <label
+          >Volume:<br />
+          <input type="text" name="volume" value="{{ reference.volume }}" />
+        </label>
+      </p>
+      <p>
+        <label
+          >Pages:<br />
+          <input type="text" name="pages" value="{{ reference.pages }}" />
+        </label>
+      </p>
+      {% endif %}
+
+      <input type="submit" name="update" value="Update reference" />
+      <input type="submit" name="back" value="Back" />
     </form>
-    </body>
-  </html>
+  </body>
+</html>

@@ -29,7 +29,7 @@ def submit():
         "title": request.form.get("title"),
         "year": request.form.get("year"),
         "publisher": request.form.get("publisher"),
-        "ISBN": request.form.get("ISBN"),
+        "isbn": request.form.get("isbn"),
         "journal": request.form.get("journal"),
         "booktitle": request.form.get("booktitle"),
         "volume": request.form.get("volume"),
@@ -67,20 +67,20 @@ def update_reference(reference_id):
     if request.method == "POST":
         data = {
         "cite_key": request.form.get("cite_key"),
-        "type": request.form.get("type"),
         "author": request.form.get("author"),
         "title": request.form.get("title"),
         "year": request.form.get("year"),
         "publisher": request.form.get("publisher"),
-        "ISBN": request.form.get("ISBN"),
+        "isbn": request.form.get("isbn"),
         "journal": request.form.get("journal"),
         "booktitle": request.form.get("booktitle"),
         "volume": request.form.get("volume"),
         "pages": request.form.get("pages"),
+        "id": reference_id
         }
         if "update" in request.form:
             repositories.reference_repositories.update_reference(**data)
-            flash("Reference updated successfully.")
+            flash("Reference updated successfully")
             return redirect("/")
 
     return redirect("/")

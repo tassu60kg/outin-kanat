@@ -10,27 +10,51 @@
       <p>
         <label
           >Cite Key:<br />
-          <input type="text" name="cite_key" value="{{ reference.cite_key }}" />
+          <input
+            type="text"
+            name="cite_key"
+            value="{{ reference.cite_key }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
 
       <p>
         <label
           >Author:<br />
-          <input type="text" name="author" value="{{ reference.author }}" />
+          <input
+            type="text"
+            name="author"
+            value="{{ reference.author }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
 
       <p>
         <label
           >Title:<br />
-          <input type="text" name="title" value="{{ reference.title }}" />
+          <input
+            type="text"
+            name="title"
+            value="{{ reference.title }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
       <p>
         <label
           >Year:<br />
-          <input type="text" name="year" value="{{ reference.year }}" />
+          <input
+            type="text"
+            name="year"
+            value="{{ reference.year }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
       {% if reference.type == "book" %}
@@ -40,7 +64,9 @@
           <input
             type="text"
             name="publisher"
-            value="{{ reference.publisher }}"
+            value="{{ reference.publisher }} "
+            required
+            pattern="\S.*"
           />
         </label>
       </p>
@@ -58,6 +84,8 @@
             type="text"
             name="booktitle"
             value="{{ reference.booktitle }}"
+            required
+            pattern="\S.*"
           />
         </label>
       </p>
@@ -65,19 +93,37 @@
       <p>
         <label
           >Journal:<br />
-          <input type="text" name="journal" value="{{ reference.journal }}" />
+          <input
+            type="text"
+            name="journal"
+            value="{{ reference.journal }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
       <p>
         <label
           >Volume:<br />
-          <input type="text" name="volume" value="{{ reference.volume }}" />
+          <input
+            type="text"
+            name="volume"
+            value="{{ reference.volume }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
       <p>
         <label
           >Pages:<br />
-          <input type="text" name="pages" value="{{ reference.pages }}" />
+          <input
+            type="text"
+            name="pages"
+            value="{{ reference.pages }}"
+            required
+            pattern="\S.*"
+          />
         </label>
       </p>
       {% endif %}

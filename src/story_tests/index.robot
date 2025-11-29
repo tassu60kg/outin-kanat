@@ -16,23 +16,26 @@ User can add Book Reference
     Add Book Reference
     Go To  ${HOME_URL}
     Check Table Exists
+    Check Book Reference In Table
 
 User can add Article Reference
     Go To  ${HOME_URL}
     Add Article Reference
     Go To  ${HOME_URL}
     Check Table Exists
+    Check Article Reference In Table
 
 User can add Inproceedings Reference
     Go To  ${HOME_URL}
     Add Inproceedings Reference
     Go To  ${HOME_URL}
     Check Table Exists
+    Check Inproceeding Reference In Table
 
 User can delete reference
     Go To  ${HOME_URL}
     Check Table Exists
-    Delete Reference
+    Delete Most Recent Reference
     Check Reference is Deleted
 
 *** Keywords ***

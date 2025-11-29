@@ -52,7 +52,7 @@ def remove_reference(reference_id):
     if request.method == "POST":
         if "remove" in request.form:
             repositories.reference_repositories.remove_reference(reference_id)
-            flash("Reference removed successfully.")
+            flash("Reference removed successfully!")
             return redirect("/")
 
     return redirect("/")
@@ -80,7 +80,7 @@ def update_reference(reference_id):
         }
         if "update" in request.form:
             repositories.reference_repositories.update_reference(**data)
-            flash("Reference updated successfully")
+            flash("Reference updated successfully!")
             return redirect("/")
 
     return redirect("/")

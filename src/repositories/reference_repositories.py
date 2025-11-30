@@ -34,3 +34,8 @@ def update_reference(**data):
         booktitle=:booktitle, volume=:volume, pages=:pages WHERE id=:id"""
     db.session.execute(text(sql), data)
     db.session.commit()
+
+def add_tag(**data):
+    sql = """INSERT INTO tags (bib_reference, tag) VALUES (:bib_reference, :tag)"""
+    db.session.execute(text(sql), data)
+    db.session.commit()

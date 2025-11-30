@@ -12,3 +12,9 @@ CREATE TABLE bib_references (
     pages TEXT,
     ISBN TEXT
 );
+
+CREATE TABLE tags (
+    id SERIAL PRIMARY KEY,
+    bib_reference INTEGER NOT NULL,
+    tag TEXT
+);

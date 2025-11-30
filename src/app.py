@@ -84,3 +84,22 @@ def update_reference(reference_id):
             return redirect("/")
 
     return redirect("/")
+
+@app.route("/update_tags/<int:reference_id>", methods=["GET", "POST"])
+def update_tags(reference_id):
+    reference = repositories.reference_repositories.get_reference_by_id(reference_id)
+
+    if request.method == "GET":
+        return render_template("update_tags.html", reference=reference)
+
+    if request.method == "POST":
+        data = {
+            "tag": request.form.get("tag"),
+            "bib_reference": request.form.get("bib_reference")
+        }
+        if "update" in request.form:
+            repositories.reference_repositories.add_tag(**data)
+            flash("Tags updated")
+            return redirect("/")
+
+    return redirect("/")

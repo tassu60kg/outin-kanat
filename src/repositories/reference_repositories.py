@@ -25,6 +25,8 @@ def get_reference_by_id(reference_id):
 def remove_reference(reference_id):
     sql = "DELETE FROM bib_references WHERE id = :id"
     db.session.execute(text(sql), {"id": reference_id})
+    sql = "DELETE FROM tags WHERE bib_reference = :id"
+    db.session.execute(text(sql), {"id": reference_id})
     db.session.commit()
 
 def update_reference(**data):
@@ -39,3 +41,8 @@ def add_tag(**data):
     sql = """INSERT INTO tags (bib_reference, tag) VALUES (:bib_reference, :tag)"""
     db.session.execute(text(sql), data)
     db.session.commit()
+
+def get_all_tags():
+    sql = "SELECT bib_reference, tag FROM tags"
+    result = db.session.execute(text(sql))
+    return result.fetchall()

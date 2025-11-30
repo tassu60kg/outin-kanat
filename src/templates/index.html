@@ -33,6 +33,7 @@
         <th>Volume</th>
         <th>Pages</th>
         <th>ISBN</th>
+        <th>tags</th>
       </tr>
       {% for reference in reference %}
       <tr>
@@ -47,6 +48,13 @@
         <td>{{reference[9]}}</td>
         <td>{{reference[10]}}</td>
         <td>{{reference[11]}}</td>
+        <td>
+        {% for tag in tag %}
+        {% if tag[0] == reference[0] %}
+        ({{tag[1]}})
+        {% endif %}
+        {% endfor %}
+        </td>
         <td><a href="/remove_reference/{{ reference.id }}">Delete</a></td>
         <td><a href="/update_reference/{{ reference.id }}">Update</a></td>
         <td><a href="/update_tags/{{ reference.id }}">Update tags</a></td>

@@ -6,7 +6,8 @@ from util import validate_year
 @app.route("/")
 def index():
     references = repositories.reference_repositories.get_all()
-    return render_template("index.html", reference = references)
+    tags = repositories.reference_repositories.get_all_tags()
+    return render_template("index.html", reference = references, tag = tags)
 
 @app.route("/add_reference")
 def form():

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BibTeX</title>
+  </head>
+  <link rel="stylesheet" href="/static/main.css">
+    <body>
+        <h2>Copy your BibTeX references here</h2>
+        {% for reference in references %}
+        {% if reference.type == "book" %}
+        <p>@book{{ "{" }}{{ reference.cite_key }} ,</p>
+        <div class="reference">
+        <p>author = {{ "{" }}{{ reference.author }}{{ "}" }},</p>
+        <p>title = {{ "{" }}{{ reference.title }}{{ "}" }},</p>
+        <p>year = {{ "{" }}{{ reference.year }}{{ "}" }},</p>
+        <p>publisher = {{ "{" }}{{ reference.publisher }}{{ "}" }},</p>
+        <p>ISBN = {{ "{" }}{{ reference.isbn }}{{ "}" }},</p>
+        </div>
+        <div class="bottom">
+        }
+        </div>
+
+        {% endif %}
+        {% if reference.type == "article" %}
+        <p>@article{{ "{" }}{{ reference.cite_key }},</p>
+        <div class="reference">
+        <p>author = {{ "{" }}{{ reference.author }}{{ "}" }},</p>
+        <p>title = {{ "{" }}{{ reference.title }}{{ "}" }},</p>
+        <p>year = {{ "{" }}{{ reference.year }}{{ "}" }},</p>
+        <p>journal = {{ "{" }}{{ reference.journal }}{{ "}" }},</p>
+        <p>volume = {{ "{" }}{{ reference.volume }}{{ "}" }},</p>
+        <p>pages = {{ "{" }}{{ reference.pages }}{{ "}" }},</p>
+        </div>
+        <div class="bottom">
+        }
+        </div>
+
+        {% endif %}
+        {% if reference.type == "inproceedings" %}
+        <p>@inproceedings{{ "{" }}{{ reference.cite_key }},</p>
+        <div class="reference">
+        <p>author = {{ "{" }}{{ reference.author }}{{ "}" }},</p>
+        <p>title = {{ "{" }}{{ reference.title }}{{ "}" }},</p>
+        <p>year = {{ "{" }}{{ reference.year }}{{ "}" }},</p>
+        <p>booktitle = {{ "{" }}{{ reference.booktitle }}{{ "}" }},</p>
+        </div>
+        <div class="bottom">
+        }
+        </div>
+
+        {% endif %}
+        {% endfor %}
+        <form action="/create_bibtex" method="post">
+            <input type="submit" name="back" value="Back" />
+        </form>
+      </body>
+</html>

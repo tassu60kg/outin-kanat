@@ -104,3 +104,12 @@ def update_tags(reference_id):
             return redirect("/")
 
     return redirect("/")
+
+@app.route("/create_bibtex", methods=["GET", "POST"])
+def create_bibtex():
+    references = repositories.reference_repositories.get_all()
+    if request.method == "GET":
+        return render_template("create_bibtex.html", references = references)
+    if request.method == "POST":
+        return redirect("/")
+    return redirect("/")

@@ -151,7 +151,7 @@ Edit Tags Of Most Recent Reference
     Title Should Be  Edit tags
     Page Should Contain  Edit tags of
     Input Text    name=tag    test_tag
-    Click Button  Send
+    Click Button  add tag
 
 Check Tag Is Visible In Table
     Page Should Contain   test_tag

@@ -123,6 +123,7 @@ Check Table Exists
     Page Should Contain  Volume
     Page Should Contain  Pages
     Page Should Contain  ISBN
+    Page Should Contain  Tags
 
 Delete Most Recent Reference
     Click Link  Delete
@@ -147,15 +148,14 @@ Edit Most Recent Reference
     Click Button  Update reference
 
 Edit Tags Of Most Recent Reference
-    Click Link  Update tags
+    Click Link   Add/Edit tags
     Title Should Be  Edit tags
-    Page Should Contain  Edit tags of
+    Page Should Contain  Edit tags from reference:
     Input Text    name=tag    test_tag
-    Click Button  add tag
+    Click Button  Add tag
 
 Check Tag Is Visible In Table
     Page Should Contain   test_tag
-
 
 Open BibTeX Page
     Click Link    Create BibTeX
@@ -168,7 +168,8 @@ Check Book Reference In BibTeX
     Page Should Contain    title = {Kesäkirja}
     Page Should Contain    year = {1972}
     Page Should Contain    publisher = {WSOY}
-    Page Should Contain    ISBN = {9789510434383}
+    Page Should Contain    ISBN = {9789510434383},
+
 
 Check Article Reference In BibTeX
     Page Should Contain    @article{CBH91
@@ -177,11 +178,12 @@ Check Article Reference In BibTeX
     Page Should Contain    year = {1991}
     Page Should Contain    journal = {American Educator}
     Page Should Contain    volume = {3}
-    Page Should Contain    pages = {38–46}
+    Page Should Contain    pages = {38–46},
+
 
 Check Inproceedings Reference In BibTeX
     Page Should Contain    @inproceedings{VPL11
     Page Should Contain    author = {Vihavainen, Arto and Paksula, Matti and Luukkainen, Matti}
     Page Should Contain    title = {Extreme Apprenticeship Method in Teaching Programming for Beginners}
     Page Should Contain    year = {2011}
-    Page Should Contain    booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education}
+    Page Should Contain    booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education},

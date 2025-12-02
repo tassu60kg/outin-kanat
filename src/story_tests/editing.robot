@@ -29,6 +29,7 @@ Setup Suite
     Open And Configure Browser
     ${test_env}=    Get Environment Variable    TEST_ENV    false
     Run Keyword If    '${test_env}' == 'false'    Empty References
+    Run Keyword If    '${test_env}' == 'true'     Reset Database
 
 Empty References
     Go To    ${HOME_URL}
@@ -39,3 +40,9 @@ Empty References
         END
         Delete Any Reference
     END
+
+Reset Database
+    ${db_url}=    Get Environment Variable    DATABASE_URL
+    ${result}=    Run Process    psql    ${db_url}    -c    TRUNCATE TABLE bib_references RESTART IDENTITY CASCADE;    stdout=YES    stderr=YES
+    Log    ${result.stdout}
+    Log    ${result.stderr}

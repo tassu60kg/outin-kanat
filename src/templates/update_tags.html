@@ -4,6 +4,11 @@
     <title>Edit tags</title>
   </head>
     <body>
+    {% for message in get_flashed_messages() %}
+    <p>
+      <b>{{ message }}</b>
+    </p>
+    {% endfor %}
         <h3>Edit tags of {{ reference.title }}</h3>
         <form action="/update_tags/{{ reference.id }}" method="post">
             <p>tag <input type="text" name="tag"></p>

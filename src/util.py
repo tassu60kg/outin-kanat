@@ -15,7 +15,7 @@ def validate_cite_key(cite_key):
 
     if cite_key == "":
         raise UserInputError("Cite key cannot be empty.")
-    
+
     if " " in cite_key:
         raise UserInputError("Cite key cannot contain spaces.")
 

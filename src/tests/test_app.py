@@ -30,11 +30,11 @@ class TestCiteKeyValidation(unittest.TestCase):
     def test_cite_key_contains_spaces(self):
         with self.assertRaises(UserInputError):
             validate_cite_key("my key")
-    
+
     def test_cite_key_contains_special_numbers(self):
         with self.assertRaises(UserInputError):
             validate_cite_key("£€$")
-    
+
     def test_cite_key_is_not_string(self):
         with self.assertRaises(UserInputError):
             validate_cite_key(123)

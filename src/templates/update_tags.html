@@ -3,22 +3,26 @@
   <head>
     <title>Edit tags</title>
   </head>
-    <body>
+  <body>
     {% for message in get_flashed_messages() %}
     <p>
       <b>{{ message }}</b>
     </p>
     {% endfor %}
-        <h3>Edit tags of {{ reference.title }}</h3>
-        <form action="/update_tags/{{ reference.id }}" method="post">
-            <p>tag <input type="text" name="tag"></p>
-            <input type="hidden" name="bib_reference" value="{{ reference.id }}">
-            <input type="submit" name="update" value="add tag" />
-            <input type="submit" name="delete" value="remove tag" />
-        </form>
-        <a href="/">return</a>
-        {% for tag in tags %}
-        <li>{{tag[0]}}</li>
-        {% endfor %}
-    </body>
+    <h3>Edit tags from reference: {{ reference.title }}</h3>
+    <form action="/update_tags/{{ reference.id }}" method="post">
+      <p>tag <input type="text" name="tag" /></p>
+      <input type="hidden" name="bib_reference" value="{{ reference.id }}" />
+      <input type="submit" name="update" value="Add tag" />
+      <input type="submit" name="delete" value="Delete tag" />
+      <input type="submit" name="back" value="Back" formnovalidate />
+    </form>
+    {% if tags %}
+    <h4>Current tags:</h4>
+    <p>
+      {% set tag_list = [] %} {% for t in tags %} {% set _ =
+      tag_list.append(t[0]) %} {% endfor %} {{ tag_list | join(', ') }}
+    </p>
+    {% endif %}
+  </body>
 </html>

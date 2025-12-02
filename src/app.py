@@ -15,10 +15,13 @@ def form():
 
 @app.route("/submit", methods=["POST", "GET"])
 def submit():
+    selected_type = request.form.get("type")
+
+    if "back_to_home" in request.form:
+        return redirect("/")
+
     if "back" in request.form:
         return render_template("add_reference.html", ref_type=None)
-
-    selected_type = request.form.get("type")
 
     if "send" not in request.form:
         return render_template("add_reference.html", ref_type=selected_type)
@@ -90,6 +93,10 @@ def update_reference(reference_id):
 def update_tags(reference_id):
     reference = repositories.reference_repositories.get_reference_by_id(reference_id)
     tags = repositories.reference_repositories.get_tags(reference_id)
+
+    if "back" in request.form:
+        return redirect("/")
+
     if request.method == "GET":
         return render_template("update_tags.html", reference=reference, tags=tags)
 
@@ -100,11 +107,11 @@ def update_tags(reference_id):
         }
         if "update" in request.form:
             repositories.reference_repositories.add_tag(**data)
-            flash("Tags updated")
+            flash("Tags updated successfully!")
             return redirect(f"/update_tags/{reference_id}")
         if "delete" in request.form:
             repositories.reference_repositories.delete_tag(**data)
-            flash("Tag removed")
+            flash("Tag removed successfully!")
             return redirect(f"/update_tags/{reference_id}")
     return redirect("/")
 

@@ -1,11 +1,16 @@
-#Lomakkeessa voi valita haluaman viitteen kategorian 
-#(kirja, inproceedings, artikkeli)
-#Taulukossa näkyy viitteen kategoria
-
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite
 Suite Teardown  Close Browser
+
+*** Comments ***
+User Story: Käyttäjänä pystyn lisäämään inproceedings ja artikkelin.
+
+Hyväksymiskriteerit:
+- Käyttäjä voi valita lomakkeesta haluamansa viitteen kategorian (kirja, inproceedings, artikkeli).
+- Kategorian valinta muokkaa näkymää viitteen muokkaamislomakkeessa.
+- Kun viite lisätään, sen kategoria tallentuu.
+- Lisätty viite ja viitteen kategoria näkyvät taulukossa.
 
 *** Test Cases ***
 User can add Book Reference

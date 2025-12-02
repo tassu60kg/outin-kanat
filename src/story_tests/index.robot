@@ -1,11 +1,17 @@
-#Pystyy luomaan kaikista lisätyistä viitteistä BibTeX-muodon
-#Nappi "Luo BibTeX" etusivulle
-#Oma sivu, jossa viitteet BibTeX-muodossa tekstinä
-
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite
 Suite Teardown  Close Browser
+
+*** Comments ***
+User Story: Käyttäjänä pystyn luomaan lähteestä BibTeX-muodon.
+
+Hyväksymiskriteerit:
+- Käyttäjä pystyy luomaan kaikista lisätyistä viitteistä BibTeX-muodon.
+- Etusivulla "Luo BibTeX" -nappi.
+- BibTeX-nappia painamalla avautuu erillinen sivu.
+- Sivu näyttää kaikki viitteet BibTeX-muodossa tekstinä.
+
 
 *** Test Cases ***
 Homepage has a link to form

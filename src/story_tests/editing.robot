@@ -1,12 +1,16 @@
-#Kategorian valinta muokkaa näkymää viitteen muokkaamislomakkeessa.
-#Viitteeseen voi lisätä tägin.
-#Viitteen tägejä voi muokata.
-#Tägit näkyvät taulukossa.
-
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite
 Suite Teardown  Close Browser
+
+*** Comments ***
+User Story: Käyttäjänä voin lisätä tägin/tägejä viitteelle.
+
+Hyväksymiskriteerit:
+- Käyttäjä voi lisätä viitteeseen tägin.
+- Käyttäjä voi muokata viitteen tägejä.
+- Käyttäjä voi poistaa viitteen tägejä.
+- Viitteen tägit näkyvät taulukossa.
 
 *** Test Cases ***
 User can edit a reference

@@ -5,7 +5,6 @@
   </head>
     <body>
         <h3>Edit tags of {{ reference.title }}</h3>
-
         <form action="/update_tags/{{ reference.id }}" method="post">
             <p>tag <input type="text" name="tag"></p>
             <input type="hidden" name="bib_reference" value="{{ reference.id }}">

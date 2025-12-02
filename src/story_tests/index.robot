@@ -44,4 +44,7 @@ Empty References
     END
 
 Reset Database
-    Run Process    psql    -c    TRUNCATE TABLE bib_references RESTART IDENTITY CASCADE;
+    ${db_url}=    Get Environment Variable    DATABASE_URL
+    ${result}=    Run Process    psql    ${db_url}    -c    TRUNCATE TABLE bib_references RESTART IDENTITY CASCADE;    stdout=YES    stderr=YES
+    Log    ${result.stdout}
+    Log    ${result.stderr}

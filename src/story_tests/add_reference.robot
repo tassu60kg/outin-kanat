@@ -4,27 +4,26 @@ Suite Setup  Setup Suite
 Suite Teardown  Close Browser
 
 *** Test Cases ***
-Homepage has a link to form
-    Go To  ${HOME_URL}
-    Title Should Be  temp
-    Page Should Contain Link  Add reference
-    Click Link  Add reference
-    Title Should Be  Add a reference
-
-User can see BibTeX of all references
+User can add Book Reference
     Go To  ${HOME_URL}
     Add Book Reference
+    Go To  ${HOME_URL}
+    Check Table Exists
+    Check Book Reference In Table
+
+User can add Article Reference
+    Go To  ${HOME_URL}
     Add Article Reference
+    Go To  ${HOME_URL}
+    Check Table Exists
+    Check Article Reference In Table
+
+User can add Inproceedings Reference
+    Go To  ${HOME_URL}
     Add Inproceedings Reference
     Go To  ${HOME_URL}
-    Open BibTeX Page
-    Page Should Contain    Copy your BibTeX references here
-    Check Book Reference In BibTeX
-    Check Article Reference In BibTeX
-    Check Inproceedings Reference In BibTeX
-    Click Button    Back
-    Title Should Be    temp
-
+    Check Table Exists
+    Check Inproceeding Reference In Table
 
 *** Keywords ***
 Setup Suite

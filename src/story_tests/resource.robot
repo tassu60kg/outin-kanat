@@ -136,3 +136,51 @@ Check Reference is Deleted
 Delete Any Reference
     Click Link    Delete
     Click Button  Delete reference
+
+Edit Most Recent Reference
+    Click Link  Update
+    Title Should Be  Edit reference
+    Page Should Contain  Edit reference
+    Input Text    name=title     Sommarboken
+    Input Text    name=author    Jansson Tove
+    Click Button  Update reference
+
+Edit Tags Of Most Recent Reference
+    Click Link  Update tags
+    Title Should Be  Edit tags
+    Page Should Contain  Edit tags of
+    Input Text    name=tag    test_tag
+    Click Button  Send
+
+Check Tag Is Visible In Table
+    Page Should Contain   test_tag
+
+
+Open BibTeX Page
+    Click Link    Create BibTeX
+    Title Should Be    BibTeX
+    Page Should Contain    Copy your BibTeX references here
+
+Check Book Reference In BibTeX
+    Page Should Contain    @book{kesakirja
+    Page Should Contain    author = {Tove Jansson}
+    Page Should Contain    title = {Kesäkirja}
+    Page Should Contain    year = {1972}
+    Page Should Contain    publisher = {WSOY}
+    Page Should Contain    ISBN = {9789510434383}
+
+Check Article Reference In BibTeX
+    Page Should Contain    @article{CBH91
+    Page Should Contain    author = {Allan Collins and John Seely Brown and Ann Holum}
+    Page Should Contain    title = {Cognitive apprenticeship: making thinking visible}
+    Page Should Contain    year = {1991}
+    Page Should Contain    journal = {American Educator}
+    Page Should Contain    volume = {3}
+    Page Should Contain    pages = {38–46}
+
+Check Inproceedings Reference In BibTeX
+    Page Should Contain    @inproceedings{VPL11
+    Page Should Contain    author = {Vihavainen, Arto and Paksula, Matti and Luukkainen, Matti}
+    Page Should Contain    title = {Extreme Apprenticeship Method in Teaching Programming for Beginners}
+    Page Should Contain    year = {2011}
+    Page Should Contain    booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education}

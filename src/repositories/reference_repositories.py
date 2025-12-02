@@ -23,9 +23,9 @@ def get_reference_by_id(reference_id):
     return result.fetchone()
 
 def remove_reference(reference_id):
-    sql = "DELETE FROM bib_references WHERE id = :id"
-    db.session.execute(text(sql), {"id": reference_id})
     sql = "DELETE FROM tags WHERE bib_reference = :id"
+    db.session.execute(text(sql), {"id": reference_id})
+    sql = "DELETE FROM bib_references WHERE id = :id"
     db.session.execute(text(sql), {"id": reference_id})
     db.session.commit()
 

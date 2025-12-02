@@ -128,5 +128,3 @@ class TestBibtexGeneration(unittest.TestCase):
 
         self.assertTrue(lines[0].startswith("@book{moomin"))
         self.assertEqual(lines[-1], "}")
-
-    

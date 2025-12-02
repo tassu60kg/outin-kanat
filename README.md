@@ -8,7 +8,7 @@ Definition of done = koodi toimii, testit menevät läpi, koodi on siistiä (pyl
 
 ## Testikattavuus
 
-[Testikattavuusraportti](htmlcov/index.html)
+[Testikattavuusraportti](src/htmlcov/index.html)
 
 ## Asennus- ja käyttöohje
 

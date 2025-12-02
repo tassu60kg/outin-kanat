@@ -46,3 +46,13 @@ def get_all_tags():
     sql = "SELECT bib_reference, tag FROM tags"
     result = db.session.execute(text(sql))
     return result.fetchall()
+
+def get_tags(bib_reference):
+    sql = """SELECT tag FROM tags WHERE bib_reference=:bib_reference"""
+    result = db.session.execute(text(sql), {"bib_reference": bib_reference})
+    return result.fetchall()
+
+def delete_tag(**data):
+    sql = """DELETE FROM tags WHERE tag=:tag"""
+    db.session.execute(text(sql), data)
+    db.session.commit()

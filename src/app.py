@@ -89,9 +89,9 @@ def update_reference(reference_id):
 @app.route("/update_tags/<int:reference_id>", methods=["GET", "POST"])
 def update_tags(reference_id):
     reference = repositories.reference_repositories.get_reference_by_id(reference_id)
-
+    tags = repositories.reference_repositories.get_tags(reference_id)
     if request.method == "GET":
-        return render_template("update_tags.html", reference=reference)
+        return render_template("update_tags.html", reference=reference, tags=tags)
 
     if request.method == "POST":
         data = {
@@ -101,8 +101,11 @@ def update_tags(reference_id):
         if "update" in request.form:
             repositories.reference_repositories.add_tag(**data)
             flash("Tags updated")
-            return redirect("/")
-
+            return redirect(f"/update_tags/{reference_id}")
+        if "delete" in request.form:
+            repositories.reference_repositories.delete_tag(**data)
+            flash("Tag removed")
+            return redirect(f"/update_tags/{reference_id}")
     return redirect("/")
 
 @app.route("/create_bibtex", methods=["GET", "POST"])

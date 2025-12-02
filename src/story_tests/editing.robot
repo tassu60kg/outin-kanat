@@ -1,3 +1,8 @@
+#Kategorian valinta muokkaa näkymää viitteen muokkaamislomakkeessa.
+#Viitteeseen voi lisätä tägin.
+#Viitteen tägejä voi muokata.
+#Tägit näkyvät taulukossa.
+
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite

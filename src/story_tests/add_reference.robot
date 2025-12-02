@@ -1,3 +1,7 @@
+#Lomakkeessa voi valita haluaman viitteen kategorian 
+#(kirja, inproceedings, artikkeli)
+#Taulukossa näkyy viitteen kategoria
+
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite

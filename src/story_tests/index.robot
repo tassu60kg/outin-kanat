@@ -1,3 +1,7 @@
+#Pystyy luomaan kaikista lisätyistä viitteistä BibTeX-muodon
+#Nappi "Luo BibTeX" etusivulle
+#Oma sivu, jossa viitteet BibTeX-muodossa tekstinä
+
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Setup Suite

@@ -40,16 +40,16 @@ vko 3:
 
 Mitä ongelmia?
 
--Kommunikaatio oli enemmän viestien varassa, kun ei nähty niin usein ryhmänä.
--Testaus oli yhden henkilön vastuulla, joka ei ollut tehnyt testattavia toiminnallisuuksia.
--Releaset oli punaisella.
+- Kommunikaatio oli enemmän viestien varassa, kun ei nähty niin usein ryhmänä.
+- Testaus oli yhden henkilön vastuulla, joka ei ollut tehnyt testattavia toiminnallisuuksia.
+- Releaset oli punaisella.
 
 Miten ratkaistu?
 
--Toiminnallisuuden tekijän vastuulla tehdä siihen liittyvät robot-testit.
--Varmistaa, että testaus toimii ennen pushausta.
+- Toiminnallisuuden tekijän vastuulla tehdä siihen liittyvät robot-testit.
+- Varmistaa, että testaus toimii ennen pushausta.
 
 Mikä toimi:
 
--Tehtiin koodausta eri päivinä, ei syntynyt pullonkauloja.
--Paremmin jaettu sprintin taskit.
+- Tehtiin koodausta eri päivinä, ei syntynyt pullonkauloja.
+- Paremmin jaettu sprintin taskit.

@@ -19,6 +19,7 @@
     <a href="/create_bibtex">Create BibTeX</a>
     <br>
     <form method="get" action="/">
+      {% if unique_tags %}
       <details>
         <summary>Suodata viitteitä tageilla</summary>
         {% for t in unique_tags %}
@@ -33,6 +34,7 @@
           Tyhjennä suodattimet
         </button>
       </details>
+      {% endif %}
     </form>
     
   </br>

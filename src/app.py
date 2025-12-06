@@ -1,5 +1,6 @@
 from flask import flash, redirect, render_template, request
 import requests
+from sqlalchemy import text
 import repositories.reference_repositories
 from config import app
 from config import db
@@ -234,7 +235,6 @@ def add_reference_with_doi():
     return redirect("/")
 
 def generate_cite_key(authors, year):
-    from sqlalchemy import text
     base_key = ""
 
     if not authors:

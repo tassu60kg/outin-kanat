@@ -2,6 +2,7 @@ from flask import flash, redirect, render_template, request
 import requests
 import repositories.reference_repositories
 from config import app
+from config import db
 from util import validate_year
 
 @app.route("/")
@@ -233,16 +234,29 @@ def add_reference_with_doi():
     return redirect("/")
 
 def generate_cite_key(authors, year):
+    from sqlalchemy import text
+    base_key = ""
+
     if not authors:
-        return f"Anon{year}"
+        base_key = f"Anon{year}"
+    else:
+        author_list = [a.strip() for a in authors.split(",") if a.strip()]
+        if not author_list:
+            base_key = f"Anon{year}"
+        elif len(author_list) == 1:
+            last_name = author_list[0].split()[-1]
+            base_key = f"{last_name}{str(year)[-2:]}"
+        else:
+            letters = "".join(name.split()[-1][0] for name in author_list)
+            base_key = f"{letters}{str(year)[-2:]}"
 
-    author_list = [a.strip() for a in authors.split(",") if a.strip()]
-    if not author_list:
-        return f"Anon{year}"
+    key = base_key
+    suffix = 1
+    while db.session.execute(
+        text("SELECT 1 FROM bib_references WHERE cite_key = :key"),
+        {"key": key}
+    ).fetchone():
+        key = f"{base_key}_{suffix}"
+        suffix += 1
 
-    if len(author_list) == 1:
-        last_name = author_list[0].split()[-1]
-        return f"{last_name}{str(year)[-2:]}"
-
-    letters = "".join(name.split()[-1][0] for name in author_list)
-    return f"{letters}{str(year)[-2:]}"
+    return key

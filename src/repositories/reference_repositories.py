@@ -3,8 +3,11 @@ from config import db
 
 def add_reference(**data):
     existing = db.session.execute(
-    text("SELECT 1 FROM bib_references WHERE cite_key = :cite_key"),
-    {"cite_key": data["cite_key"]}
+        text("""
+            SELECT cite_key FROM bib_references
+            WHERE title = :title AND author = :author AND year = :year
+        """),
+        {"title": data["title"], "author": data["author"], "year": data["year"]}
     ).fetchone()
 
     if existing:
@@ -16,9 +19,11 @@ def add_reference(**data):
          publisher, isbn, journal, booktitle, volume, pages)
     VALUES
         (:cite_key, :type, :author, :title, :year,
-         :publisher, :isbn, :journal, :booktitle, :volume, :pages)"""
+         :publisher, :isbn, :journal, :booktitle, :volume, :pages)
+    """
     db.session.execute(text(sql), data)
     db.session.commit()
+
     return True
 
 def get_all():
@@ -66,18 +71,3 @@ def delete_tag(**data):
     sql = """DELETE FROM tags WHERE tag=:tag"""
     db.session.execute(text(sql), data)
     db.session.commit()
-
-def filter_references_by_tags(tags):
-    if not tags:
-        return []
-
-    sql = text("""
-            SELECT DISTINCT br.*
-            FROM bib_references br
-            JOIN tags t ON br.id = t.bib_reference
-            WHERE t.tag IN :tags
-            ORDER BY br.id DESC
-        """).bindparams(bindparam("tags", expanding=True))
-
-    result = db.session.execute(sql, {"tags": tags})
-    return result.fetchall()

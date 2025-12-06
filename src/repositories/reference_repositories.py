@@ -1,5 +1,6 @@
-from sqlalchemy import text
+from sqlalchemy import text, bindparam
 from config import db
+
 def add_reference(**data):
     sql =  """
     INSERT INTO bib_references
@@ -56,3 +57,18 @@ def delete_tag(**data):
     sql = """DELETE FROM tags WHERE tag=:tag"""
     db.session.execute(text(sql), data)
     db.session.commit()
+
+def filter_references_by_tags(tags):
+    if not tags:
+        return []
+
+    sql = text("""
+            SELECT DISTINCT br.* 
+            FROM bib_references br
+            JOIN tags t ON br.id = t.bib_reference
+            WHERE t.tag IN :tags
+            ORDER BY br.id DESC
+        """).bindparams(bindparam("tags", expanding=True))
+
+    result = db.session.execute(sql, {"tags": tags})
+    return result.fetchall()

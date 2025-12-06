@@ -7,7 +7,15 @@ from util import validate_year
 def index():
     references = repositories.reference_repositories.get_all()
     tags = repositories.reference_repositories.get_all_tags()
-    return render_template("index.html", reference = references, tag = tags)
+
+    unique_tags = {tag.tag: tag for tag in tags}.values()
+
+    selected_tags = request.args.getlist("tags")
+
+    if selected_tags:
+        references = repositories.reference_repositories.filter_references_by_tags(selected_tags)
+
+    return render_template("index.html", reference=references, tag=tags, unique_tags=unique_tags)
 
 @app.route("/add_reference")
 def form():
@@ -119,7 +127,7 @@ def update_tags(reference_id):
 def create_bibtex():
     references = repositories.reference_repositories.get_all()
     if request.method == "GET":
-        return render_template("create_bibtex.html", references = references)
+        return render_template("create_bibtex.html", references=references)
     if request.method == "POST":
         return redirect("/")
     return redirect("/")

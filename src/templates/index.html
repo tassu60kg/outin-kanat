@@ -18,6 +18,23 @@
     <a href="/add_reference">Add reference</a> |
     <a href="/create_bibtex">Create BibTeX</a>
     <br>
+    <form method="get" action="/">
+      <details>
+        <summary>Suodata viitteitä tageilla</summary>
+        {% for t in unique_tags %}
+          <label>
+            <input type="checkbox" name="tags" value="{{ t.tag }}"
+                   {% if t.tag in selected_tags %}checked{% endif %}>
+            {{ t.tag }}
+          </label><br>
+        {% endfor %}
+        <button type="submit">Näytä viitteet</button>
+        <button type="button" onclick="window.location.href='/'">
+          Tyhjennä suodattimet
+        </button>
+      </details>
+    </form>
+    
   </br>
 
     <table style="width: 100%">

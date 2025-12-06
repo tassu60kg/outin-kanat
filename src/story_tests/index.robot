@@ -21,6 +21,21 @@ Homepage has a link to form
     Click Link  Add reference
     Title Should Be  Add a reference
 
+Homepage has a link to BibTeX page
+    Go To  ${HOME_URL}
+    Title Should Be  temp
+    Page Should Contain Link  Create BibTeX
+    Click Link  Create BibTeX
+    Title Should Be  BibTeX
+    Page Should Contain    Copy your BibTeX references here
+
+Homepage has a link to add reference with DOI
+    Go To  ${HOME_URL}
+    Title Should Be  temp
+    Page Should Contain Link  Add reference with DOI
+    Click Link  Add reference with DOI
+    Title Should Be  Add reference with DOI
+
 User can see BibTeX of all references
     Go To  ${HOME_URL}
     Add Book Reference

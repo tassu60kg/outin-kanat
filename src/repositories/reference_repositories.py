@@ -2,6 +2,14 @@ from sqlalchemy import text, bindparam
 from config import db
 
 def add_reference(**data):
+    existing = db.session.execute(
+    text("SELECT 1 FROM bib_references WHERE cite_key = :cite_key"),
+    {"cite_key": data["cite_key"]}
+    ).fetchone()
+
+    if existing:
+        return False
+
     sql =  """
     INSERT INTO bib_references
         (cite_key, type, author, title, year,
@@ -11,6 +19,7 @@ def add_reference(**data):
          :publisher, :isbn, :journal, :booktitle, :volume, :pages)"""
     db.session.execute(text(sql), data)
     db.session.commit()
+    return True
 
 def get_all():
     sql = sql = """SELECT * FROM bib_references
@@ -63,7 +72,7 @@ def filter_references_by_tags(tags):
         return []
 
     sql = text("""
-            SELECT DISTINCT br.* 
+            SELECT DISTINCT br.*
             FROM bib_references br
             JOIN tags t ON br.id = t.bib_reference
             WHERE t.tag IN :tags

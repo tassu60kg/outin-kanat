@@ -30,7 +30,7 @@ Open And Configure Browser
 Add Book Reference
     Click Link  Add reference
     Title Should Be  Add a reference
-    Page Should Contain  Select a reference type:
+    Page Should Contain  Select a reference type
     Select From List By Label  name=type      Book
     Click Button  Continue
     Page Should Contain  Add book reference
@@ -58,7 +58,7 @@ Check Book Reference In Table
 Add Article Reference
     Click Link  Add reference
     Title Should Be  Add a reference
-    Page Should Contain  Select a reference type:
+    Page Should Contain  Select a reference type
     Select From List By Label  name=type      Article
     Click Button  Continue
     Fill Reference With Article Test
@@ -87,7 +87,7 @@ Check Article Reference In Table
 Add Inproceedings Reference
     Click Link  Add reference
     Title Should Be  Add a reference
-    Page Should Contain  Select a reference type:
+    Page Should Contain  Select a reference type
     Select From List By Label  name=type      Inproceedings
     Click Button  Continue
     Fill Reference With Inproceedings Test
@@ -150,7 +150,7 @@ Edit Most Recent Reference
 Edit Tags Of Most Recent Reference
     Click Link   Add/Edit tags
     Title Should Be  Edit tags
-    Page Should Contain  Edit tags from reference:
+    Page Should Contain  Edit tags from reference
     Input Text    name=tag    test_tag
     Click Button  Add tag
 

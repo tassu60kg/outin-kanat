@@ -14,8 +14,8 @@
     {% for message in get_flashed_messages() %}
     <p><b>{{ message }}</b></p>
     {% endfor %}
-
     <a href="/add_reference">Add reference</a> |
+    <a href="/add_reference_with_doi">Add reference with DOI</a> |
     <a href="/create_bibtex">Create BibTeX</a>
     <br>
     <form method="get" action="/">
@@ -36,7 +36,7 @@
       </details>
       {% endif %}
     </form>
-    
+
   </br>
 
     <table style="width: 100%">

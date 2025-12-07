@@ -1,9 +1,7 @@
 from flask import flash, redirect, render_template, request
 import requests
-from sqlalchemy import text
 import repositories.reference_repositories
 from config import app
-from config import db
 from util import validate_year
 
 @app.route("/")
@@ -235,8 +233,6 @@ def add_reference_with_doi():
     return redirect("/")
 
 def generate_cite_key(authors, year):
-    base_key = ""
-
     if not authors:
         base_key = f"Anon{year}"
     else:
@@ -247,15 +243,13 @@ def generate_cite_key(authors, year):
             last_name = author_list[0].split()[-1]
             base_key = f"{last_name}{str(year)[-2:]}"
         else:
-            letters = "".join(name.split()[-1][0] for name in author_list)
+            letters = "".join(a.split()[-1][0] for a in author_list)
             base_key = f"{letters}{str(year)[-2:]}"
 
     key = base_key
     suffix = 1
-    while db.session.execute(
-        text("SELECT 1 FROM bib_references WHERE cite_key = :key"),
-        {"key": key}
-    ).fetchone():
+
+    while repositories.reference_repositories.cite_key_exists(key):
         key = f"{base_key}_{suffix}"
         suffix += 1
 

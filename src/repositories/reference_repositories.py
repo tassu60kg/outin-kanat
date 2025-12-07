@@ -26,8 +26,13 @@ def add_reference(**data):
 
     return True
 
+def cite_key_exists(key):
+    sql = """SELECT 1 FROM bib_references WHERE cite_key = :cite_key"""
+    result = db.session.execute(text(sql), {"cite_key": key})
+    return result.fetchone()
+
 def get_all():
-    sql = sql = """SELECT * FROM bib_references
+    sql = """SELECT * FROM bib_references
         ORDER BY id DESC"""
     result = db.session.execute(text(sql))
     return result.fetchall()

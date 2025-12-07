@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/static/main.css">
     <body>
         <h2>Copy your BibTeX references here</h2>
+        <div id="copyable">
         {% for reference in references %}
         {% if reference.type == "book" %}
         <p>@book{{ "{" }}{{ reference.cite_key }} ,</p>
@@ -50,8 +51,19 @@
 
         {% endif %}
         {% endfor %}
+        </div>
         <form action="/create_bibtex" method="post">
-            <input type="submit" name="back" value="Back" />
+        
+        <input type="submit" name="back" value="Back" />
         </form>
+        <button onclick="copytext()">copy text</button>
+        
       </body>
+<script>
+function copytext() {
+var text = document.getElementById("copyable").innerText;
+navigator.clipboard.writeText(text);
+alert("idk maybe copied something");
+}
+</script>
 </html>

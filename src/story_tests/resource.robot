@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 Library  Process
 
 *** Variables ***
-${SERVER}    localhost:5001
+${SERVER}    127.0.0.1:5000
 ${DELAY}     0.5 seconds
 ${HOME_URL}  http://${SERVER}
 ${BROWSER}   chrome
@@ -152,6 +152,13 @@ Edit Tags Of Most Recent Reference
     Title Should Be  Edit tags
     Page Should Contain  Edit tags from reference
     Input Text    name=tag    test_tag
+    Click Button  Add tag
+
+Edit Tags of Second Most Recent Reference
+    Click Link   xpath=(//a[text()="Add/Edit tags"])[2]
+    Title Should Be  Edit tags
+    Page Should Contain  Edit tags from reference
+    Input Text    name=tag    tag_test
     Click Button  Add tag
 
 Check Tag Is Visible In Table

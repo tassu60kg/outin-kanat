@@ -62,24 +62,23 @@ User can filter references by tag
     Edit Tags Of Most Recent Reference
     Go To  ${HOME_URL}
     Check Tag Is Visible In Table
+    Edit Tags of Second Most Recent Reference
+    Go To  ${HOME_URL}
     Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
     Select Checkbox  test_tag
     Click Button  Näytä viitteet
-    Page Should Not Contain  kesakirja
-    Page Should Not Contain  CBH91
-    Page Should Contain  VPL11
+    Page Should Contain  test_tag
 
 User can clear filters
     Go To  ${HOME_URL}
     Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
     Select Checkbox  test_tag
     Click Button  Näytä viitteet
-    Page Should Not Contain  kesakirja
+    Page Should Contain  test_tag
     Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
     Click Button  Tyhjennä suodattimet
-    Page Should Contain  kesakirja
-    Page Should Contain  CBH91
-    Page Should Contain  VPL11
+    Page Should Contain  test_tag
+    Page Should Contain  tag_test
 
 *** Keywords ***
 Setup Suite

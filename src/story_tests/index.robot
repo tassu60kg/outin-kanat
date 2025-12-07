@@ -12,6 +12,13 @@ Hyväksymiskriteerit:
 - BibTeX-nappia painamalla avautuu erillinen sivu.
 - Sivu näyttää kaikki viitteet BibTeX-muodossa tekstinä.
 
+User Story: Käyttäjänä pystyn suodattamaan viitteitä tageilla.
+
+Hyväksymiskriteerit:
+- Lista tägeistä, jotka on lisätty viitteille
+- Pystyy valitsemaan listasta haluaman tägin/tägit
+- Painamalla "Näytä viitteet" -nappia, sivu päivittyy näyttämään vain valitulla tagilla merkityt viitteet
+- Suodattimet voi tyhjentää
 
 *** Test Cases ***
 Homepage has a link to form
@@ -50,6 +57,29 @@ User can see BibTeX of all references
     Click Button    Back
     Title Should Be    temp
 
+User can filter references by tag
+    Go To  ${HOME_URL}
+    Edit Tags Of Most Recent Reference
+    Go To  ${HOME_URL}
+    Check Tag Is Visible In Table
+    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Select Checkbox  test_tag
+    Click Button  Näytä viitteet
+    Page Should Not Contain  kesakirja
+    Page Should Not Contain  CBH91
+    Page Should Contain  VPL11
+
+User can clear filters
+    Go To  ${HOME_URL}
+    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Select Checkbox  test_tag
+    Click Button  Näytä viitteet
+    Page Should Not Contain  kesakirja
+    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Click Button  Tyhjennä suodattimet
+    Page Should Contain  kesakirja
+    Page Should Contain  CBH91
+    Page Should Contain  VPL11
 
 *** Keywords ***
 Setup Suite

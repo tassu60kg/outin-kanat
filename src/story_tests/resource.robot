@@ -170,7 +170,6 @@ Check Book Reference In BibTeX
     Page Should Contain    publisher = {WSOY}
     Page Should Contain    ISBN = {9789510434383},
 
-
 Check Article Reference In BibTeX
     Page Should Contain    @article{CBH91
     Page Should Contain    author = {Allan Collins and John Seely Brown and Ann Holum}
@@ -180,10 +179,96 @@ Check Article Reference In BibTeX
     Page Should Contain    volume = {3}
     Page Should Contain    pages = {38–46},
 
-
 Check Inproceedings Reference In BibTeX
     Page Should Contain    @inproceedings{VPL11
     Page Should Contain    author = {Vihavainen, Arto and Paksula, Matti and Luukkainen, Matti}
     Page Should Contain    title = {Extreme Apprenticeship Method in Teaching Programming for Beginners}
     Page Should Contain    year = {2011}
     Page Should Contain    booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education},
+
+Fill Article Reference With DOI
+    Input text   name=doi   10.1007/BF00868065
+
+Fill Book Reference With Invalid DOI
+    Input text   name=doi   123
+
+Check DOI article In Table
+    Page Should Contain   article
+    Page Should Contain   IT90
+    Page Should Contain   Lexical integration across saccades in reading
+    Page Should Contain   Albrecht Werner Inhoff, Stuart Tousman
+    Page Should Contain   1990
+    Page Should Contain   Psychological Research
+    Page Should Contain   52
+    Page Should Contain   330–337
+
+Add Article Reference With DOI
+    Click link   Add reference with DOI
+    Title should be   Add reference with DOI
+    Page should contain   Add reference with DOI
+    Page should contain button  Back
+    Fill Article Reference with DOI
+    Click Button   Add Reference
+
+Fill Inproceedings Reference With DOI
+    Input text   name=doi   10.1145/1982185.1982255
+
+Check DOI Inproceedings In Table
+    Page Should Contain   inproceedings
+    Page Should Contain   SIS11
+    Page Should Contain   Software reuse in agile development organizations
+    Page Should Contain   Wouter Spoelstra, Maria Iacob, Marten van Sinderen
+    Page Should Contain   2011
+    Page Should Contain   Proceedings of the 2011 ACM Symposium on Applied Computing
+
+Add Inproceedings Reference With DOI
+    Click link   Add reference with DOI
+    Title should be   Add reference with DOI
+    Page should contain   Add reference with DOI
+    Page should contain button  Back
+    Fill Inproceedings Reference with DOI
+    Click Button   Add Reference
+
+Fill Book Reference With DOI
+    Input text   name=doi   10.1007/978-3-030-14596-5
+
+Check DOI Book In Table
+    Page Should Contain   book
+    Page Should Contain   KLW19
+    Page Should Contain   Deep Learning for NLP and Speech Recognition
+    Page Should Contain   Uday Kamath, John Liu, James Whitaker
+    Page Should Contain   2019
+    Page Should Contain   Springer International Publishing
+    Page Should Contain   9783030145958
+
+Add Book Reference With DOI
+    Click link   Add reference with DOI
+    Title should be   Add reference with DOI
+    Page should contain   Add reference with DOI
+    Page should contain button  Back
+    Fill Book Reference with DOI
+    Click Button   Add Reference
+
+Check DOI Article Reference In BibTeX
+    Page Should Contain    @article{IT90
+    Page Should Contain    author = {Albrecht Werner Inhoff, Stuart Tousman}
+    Page Should Contain    title = {Lexical integration across saccades in reading}
+    Page Should Contain    year = {1990}
+    Page Should Contain    journal = {Psychological Research}
+    Page Should Contain    volume = {52}
+    Page Should Contain    pages = {330–337},
+
+Check DOI Inproceedings Reference In BibTeX
+    Page Should Contain    @inproceedings{SIS11
+    Page Should Contain    author = {Wouter Spoelstra, Maria Iacob, Marten van Sinderen}
+    Page Should Contain    title = {Software reuse in agile development organizations}
+    Page Should Contain    year = {2011}
+    Page Should Contain    booktitle = {Proceedings of the 2011 ACM Symposium on Applied Computing},
+
+Check DOI Book Reference In BibTeX
+    Page Should Contain    @book{KLW19
+    Page Should Contain    author = {Uday Kamath, John Liu, James Whitaker}
+    Page Should Contain    title = {Deep Learning for NLP and Speech Recognition}
+    Page Should Contain    year = {2019}
+    Page Should Contain    publisher = {Springer International Publishing}
+    Page Should Contain    ISBN = {9783030145958},

@@ -16,7 +16,8 @@ def index():
     if selected_tags:
         references = repositories.reference_repositories.filter_references_by_tags(selected_tags)
 
-    return render_template("index.html", reference=references, tag=tags, unique_tags=unique_tags)
+    return render_template("index.html", reference=references, tag=tags, unique_tags=unique_tags,
+            selected_tags=selected_tags)
 
 @app.route("/add_reference")
 def form():
@@ -126,7 +127,13 @@ def update_tags(reference_id):
 
 @app.route("/create_bibtex", methods=["GET", "POST"])
 def create_bibtex():
-    references = repositories.reference_repositories.get_all()
+    selected_tags = request.args.getlist("tags")
+
+    references = repositories.reference_repositories.filter_references_by_tags(selected_tags)
+
+    if references == []:
+        references = repositories.reference_repositories.get_all()
+
     if request.method == "GET":
         return render_template("create_bibtex.html", references=references)
     if request.method == "POST":

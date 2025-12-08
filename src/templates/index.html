@@ -17,7 +17,7 @@
     {% endfor %}
     <a href="/add_reference">Add reference</a> |
     <a href="/add_reference_with_doi">Add reference with DOI</a> |
-    <a href="/create_bibtex">Create BibTeX</a>
+    <a id="bibtex_link" href="/create_bibtex">Create BibTeX</a>
     <br>
     <form method="get" action="/">
       {% if unique_tags %}
@@ -86,4 +86,23 @@
       {% endfor %}
     </table>
   </body>
+<script>
+function updateBibtexLink() {
+    let checked = [...document.querySelectorAll('input[name="tags"]:checked')]
+                 .map(cb => "tags=" + encodeURIComponent(cb.value));
+
+    let url = "/create_bibtex";
+    if (checked.length > 0) {
+        url += "?" + checked.join("&");
+    }
+
+    document.getElementById("bibtex_link").href = url;
+}
+
+updateBibtexLink();
+
+document.querySelectorAll('input[name="tags"]').forEach(cb => {
+    cb.addEventListener("change", updateBibtexLink);
+});
+</script>
 </html>

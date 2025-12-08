@@ -6,8 +6,12 @@
   <link rel="stylesheet" href="/static/main.css">
   <body>
     {% if not ref_type %}
-    <h2>Select a reference type</h2>
-    <form action="/submit" method="post">
+    <header class="form-top-bar">
+      <div class="form-top-bar__title">
+        <h2>Select a reference type</h2>
+      </div>
+    </header>
+    <form action="/submit" method="post" class="form-style">
       <p>
         <label
           >Type:
@@ -18,13 +22,18 @@
           </select>
         </label>
       </p>
-      <input type="submit" name="choose_type" value="Continue" />
-      <input type="submit" name="back_to_home" value="Back" formnovalidate />
+      <input type="submit" name="choose_type" value="Continue" class="btn btn--small" />
+      <input type="submit" name="back_to_home" value="Back" formnovalidate class="btn btn--small" />
     </form>
     {% endif %} {% if ref_type %}
-    <h2>Add {{ ref_type }} reference</h2>
 
-    <form action="/submit" method="post">
+    <header class="form-top-bar">
+      <div class="form-top-bar__title">
+        <h2>Add {{ ref_type }} reference</h2>
+      </div>
+    </header>
+
+    <form action="/submit" method="post" class="form-style">
       <input type="hidden" name="type" value="{{ ref_type }}" />
 
       <p>
@@ -55,8 +64,8 @@
       <p>pages <input type="text" name="pages" required pattern="\S.*" /></p>
       {% endif %}
 
-      <input type="submit" name="send" value="Add reference" />
-      <input type="submit" name="back" value="Back" formnovalidate />
+      <input type="submit" name="send" value="Add reference" class="btn btn--small" />
+      <input type="submit" name="back" value="Back" formnovalidate class="btn btn--small" />
     </form>
     {% endif %}
   </body>

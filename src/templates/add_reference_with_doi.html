@@ -4,17 +4,21 @@
     <title>Add reference with DOI</title>
   </head>
   <link rel="stylesheet" href="/static/main.css">
-  <body>
+  <body class="center-page">
     {% for message in get_flashed_messages() %}
     <p><b>{{ message }}</b></p>
     {% endfor %}
-    <h2>Add reference with DOI</h2>
-    <form method="post" action="/add_reference_with_doi">
+    <header class="form-top-bar">
+      <div class="form-top-bar__title">
+        <h2>Add reference with DOI</h2>
+      </div>
+    </header>
+    <form method="post" action="/add_reference_with_doi" class="form-style">
       <label for="identifier">DOI</label>
       <input type="text" id="doi" name="doi" required />
       <br /><br />
-      <input type="submit" name="send" value="Add Reference" />
-      <input type="submit" name="back" value="Back" formnovalidate />
+      <input type="submit" name="send" value="Add Reference" class="btn btn--small"/>
+      <input type="submit" name="back" value="Back" formnovalidate class="btn btn--small"/>
     </form>
   </body>
 </html>

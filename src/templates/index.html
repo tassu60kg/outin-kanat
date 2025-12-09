@@ -37,8 +37,8 @@
             {{ t.tag }}
           </label><br>
         {% endfor %}
-        <button type="submit">Näytä viitteet</button>
-        <button type="button" onclick="window.location.href='/'">
+        <button type="submit" class="btn btn--small">Näytä viitteet</button>
+        <button type="button" onclick="window.location.href='/'" class="btn btn--small">
           Tyhjennä suodattimet
         </button>
       </details>
@@ -84,10 +84,10 @@
           %} {% set _ = ref_tags.append(t[1]) %} {% endif %} {% endfor %} {{
           ref_tags | join(', ') }}
         </td>
-        <td><a href="/remove_reference/{{ reference.id }}">Delete</a></td>
-        <td><a href="/update_reference/{{ reference.id }}">Update</a></td>
+        <td><a href="/remove_reference/{{ reference.id }}" class="btn--link">Delete</a></td>
+        <td><a href="/update_reference/{{ reference.id }}" class="btn--link">Update</a></td>
         <td>
-          <a href="/update_tags/{{ reference.id }}">Add/Edit tags</a>
+          <a href="/update_tags/{{ reference.id }}" class="btn--link">Add/Edit tags</a>
         </td>
       </tr>
       {% endfor %}

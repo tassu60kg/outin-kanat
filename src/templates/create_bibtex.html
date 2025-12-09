@@ -5,7 +5,11 @@
   </head>
   <link rel="stylesheet" href="/static/main.css">
     <body>
-        <h2>Copy your BibTeX references here</h2>
+      <header class="form-top-bar">
+        <div class="form-top-bar__title">
+          <h2>Copy your BibTeX references here</h2>
+        </div>
+      </header>
         <div id="copyable">
         {% for reference in references %}
         {% if reference.type == "book" %}
@@ -54,16 +58,16 @@
         </div>
         <form action="/create_bibtex" method="post">
         
-        <input type="submit" name="back" value="Back" />
+        <input type="submit" name="back" value="Back" class="btn btn--small"/>
         </form>
-        <button onclick="copytext()">copy text</button>
+        <button onclick="copytext()" class="btn btn--small">Copy text</button>
         
       </body>
 <script>
 function copytext() {
 var text = document.getElementById("copyable").innerText;
 navigator.clipboard.writeText(text);
-alert("references copied");
+alert("References copied");
 }
 </script>
 </html>

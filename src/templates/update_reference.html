@@ -4,10 +4,14 @@
     <title>Edit reference</title>
   </head>
   <link rel="stylesheet" href="/static/main.css">
-  <body>
-    <h3>Edit {{ reference.type }} reference</h3>
+  <body class="center-page">
+    <header class="form-top-bar">
+      <div class="form-top-bar__title">
+        <h3>Edit {{ reference.type }} reference</h3>
+      </div>
+    </header>
 
-    <form action="/update_reference/{{ reference.id }}" method="post">
+    <form action="/update_reference/{{ reference.id }}" method="post" class="form-style">
       <p>
         <label
           >Cite Key:<br />
@@ -129,8 +133,8 @@
       </p>
       {% endif %}
 
-      <input type="submit" name="update" value="Update reference" />
-      <input type="submit" name="back" value="Back" />
+      <input type="submit" name="update" value="Update reference" class="btn btn--small" />
+      <input type="submit" name="back" value="Back" class="btn btn--small" />
     </form>
   </body>
 </html>

@@ -4,19 +4,23 @@
     <title>Edit tags</title>
   </head>
   <link rel="stylesheet" href="/static/main.css">
-  <body>
+  <body class="center-page">
     {% for message in get_flashed_messages() %}
     <p>
       <b>{{ message }}</b>
     </p>
     {% endfor %}
-    <h3>Edit tags from reference: {{ reference.title }}</h3>
-    <form action="/update_tags/{{ reference.id }}" method="post">
+    <header class="form-top-bar">
+      <div class="form-top-bar__title">
+        <h3>Edit tags from reference: {{ reference.title }}</h3>
+      </div>
+    </header>
+    <form action="/update_tags/{{ reference.id }}" method="post" class="form-style">
       <p>tag <input type="text" name="tag" /></p>
       <input type="hidden" name="bib_reference" value="{{ reference.id }}" />
-      <input type="submit" name="update" value="Add tag" />
-      <input type="submit" name="delete" value="Delete tag" />
-      <input type="submit" name="back" value="Back" formnovalidate />
+      <input type="submit" name="update" value="Add tag" class="btn btn--small" />
+      <input type="submit" name="delete" value="Delete tag" class="btn btn--small" />
+      <input type="submit" name="back" value="Back" formnovalidate class="btn btn--small" />
     </form>
     {% if tags %}
     <h4>Current tags:</h4>

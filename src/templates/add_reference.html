@@ -15,7 +15,7 @@
       <p>
         <label
           >Type:
-          <select name="type">
+          <select name="type" class="select-field">
             <option value="book">Book</option>
             <option value="article">Article</option>
             <option value="inproceedings">Inproceedings</option>
@@ -37,31 +37,31 @@
       <input type="hidden" name="type" value="{{ ref_type }}" />
 
       <p>
-        cite key <input type="text" name="cite_key" required pattern="\S.*" />
+        cite key <input type="text" name="cite_key" required pattern="\S.*" class="form-row"/>
       </p>
       <p>
         author
-        <input type="text" name="author" required pattern="\S.*" />
+        <input type="text" name="author" required pattern="\S.*" class="form-row"/>
       </p>
-      <p>title <input type="text" name="title" required pattern="\S.*" /></p>
+      <p>title <input type="text" name="title" required pattern="\S.*" class="form-row"/></p>
 
       {% if ref_type in ["book", "inproceedings", "article"] %}
-      <p>year <input type="text" name="year" required pattern="\S.*" /></p>
+      <p>year <input type="text" name="year" required pattern="\S.*" class="form-row"/></p>
       {% endif %} {% if ref_type == "book" %}
       <p>
-        publisher <input type="text" name="publisher" required pattern="\S.*" />
+        publisher <input type="text" name="publisher" required pattern="\S.*" class="form-row"/>
       </p>
-      <p>ISBN <input type="text" name="isbn" /></p>
+      <p>ISBN <input type="text" name="isbn" class="form-row"/></p>
       {% endif %} {% if ref_type == "inproceedings" %}
       <p>
-        booktitle <input type="text" name="booktitle" required pattern="\S.*" />
+        booktitle <input type="text" name="booktitle" required pattern="\S.*" class="form-row"/>
       </p>
       {% endif %} {% if ref_type == "article" %}
       <p>
-        journal <input type="text" name="journal" required pattern="\S.*" />
+        journal <input type="text" name="journal" required pattern="\S.*" class="form-row"/>
       </p>
-      <p>volume <input type="text" name="volume" required pattern="\S.*" /></p>
-      <p>pages <input type="text" name="pages" required pattern="\S.*" /></p>
+      <p>volume <input type="text" name="volume" required pattern="\S.*" class="form-row"/></p>
+      <p>pages <input type="text" name="pages" required pattern="\S.*" class="form-row"/></p>
       {% endif %}
 
       <input type="submit" name="send" value="Add reference" class="btn btn--small" />

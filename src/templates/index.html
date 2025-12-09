@@ -29,7 +29,7 @@
     <form method="get" action="/">
       {% if unique_tags %}
       <details>
-        <summary>Suodata viitteitä tageilla</summary>
+        <summary>Filter references by tags</summary>
         {% for t in unique_tags %}
           <label>
             <input type="checkbox" name="tags" value="{{ t.tag }}"
@@ -37,9 +37,9 @@
             {{ t.tag }}
           </label><br>
         {% endfor %}
-        <button type="submit" class="btn btn--small">Näytä viitteet</button>
+        <button type="submit" class="btn btn--small">Show</button>
         <button type="button" onclick="window.location.href='/'" class="btn btn--small">
-          Tyhjennä suodattimet
+          Clear filters
         </button>
       </details>
       {% endif %}

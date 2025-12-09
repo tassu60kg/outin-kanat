@@ -64,19 +64,19 @@ User can filter references by tag
     Check Tag Is Visible In Table
     Edit Tags of Second Most Recent Reference
     Go To  ${HOME_URL}
-    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Click Element  xpath://form/details/summary["Filter references by tags"]
     Select Checkbox  test_tag
-    Click Button  Näytä viitteet
+    Click Button  Show
     Page Should Contain  test_tag
 
 User can clear filters
     Go To  ${HOME_URL}
-    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Click Element  xpath://form/details/summary["Filter references by tags"]
     Select Checkbox  test_tag
-    Click Button  Näytä viitteet
+    Click Button  Show
     Page Should Contain  test_tag
-    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
-    Click Button  Tyhjennä suodattimet
+    Click Element  xpath://form/details/summary["Filter references by tags"]
+    Click Button  Clear filters
     Page Should Contain  test_tag
     Page Should Contain  tag_test
 
@@ -84,7 +84,7 @@ User can see BibTeX of filtered references
     Go To  ${HOME_URL}
     Edit Tags of Inproceedings
     Go To  ${HOME_URL}
-    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Click Element  xpath://form/details/summary["Filter references by tags"]
     Select Checkbox  tag_filter
     Open BibTeX Page
     Check Book Reference Not In BibTeX

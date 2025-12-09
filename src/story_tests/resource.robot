@@ -161,6 +161,14 @@ Edit Tags of Second Most Recent Reference
     Input Text    name=tag    tag_test
     Click Button  Add tag
 
+Edit Tags of Inproceedings
+    Click Element    css=details > summary
+    Click Element    xpath=//tr[td[1][normalize-space(.)="inproceedings"]]//td[15]//a
+    Title Should Be  Edit tags
+    Page Should Contain  Edit tags from reference
+    Input Text    name=tag    tag_filter
+    Click Button  Add tag
+
 Check Tag Is Visible In Table
     Page Should Contain   test_tag
 

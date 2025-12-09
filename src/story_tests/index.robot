@@ -69,6 +69,15 @@ User can filter references by tag
     Click Button  Näytä viitteet
     Page Should Contain  test_tag
 
+User can see BibTeX of filtered references
+    Go To  ${HOME_URL}
+    Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]
+    Select Checkbox  test_tag
+    Open BibTeX Page
+    Check Book Reference Not In BibTeX
+    Check Article Reference Not In BibTeX
+    Check Inproceedings Reference In BibTeX
+
 User can clear filters
     Go To  ${HOME_URL}
     Click Element  xpath://form/details/summary["Suodata viitteitä tageilla"]

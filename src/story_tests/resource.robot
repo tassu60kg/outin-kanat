@@ -193,6 +193,23 @@ Check Inproceedings Reference In BibTeX
     Page Should Contain    year = {2011}
     Page Should Contain    booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education},
 
+Check Book Reference Not In BibTeX
+    Page Should Not Contain    @book{kesakirja
+    Page Should Not Contain    author = {Tove Jansson}
+    Page Should Not Contain    title = {Kesäkirja}
+    Page Should Not Contain    year = {1972}
+    Page Should Not Contain    publisher = {WSOY}
+    Page Should Not Contain    ISBN = {9789510434383},
+
+Check Article Reference Not In BibTeX
+    Page Should Not Contain    @article{CBH91
+    Page Should Not Contain    author = {Allan Collins and John Seely Brown and Ann Holum}
+    Page Should Not Contain    title = {Cognitive apprenticeship: making thinking visible}
+    Page Should Not Contain    year = {1991}
+    Page Should Not Contain    journal = {American Educator}
+    Page Should Not Contain    volume = {3}
+    Page Should Not Contain    pages = {38–46},
+
 Fill Article Reference With DOI
     Input text   name=doi   10.1007/BF00868065
 

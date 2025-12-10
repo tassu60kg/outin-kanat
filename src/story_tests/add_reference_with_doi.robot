@@ -4,6 +4,15 @@ Suite Setup  Setup Suite
 Suite Teardown  Close Browser
 
 
+*** Comments ***
+User Story: Käyttäjänä voin lisätä viitteen DOI:n avulla.
+
+Hyväksymiskriteerit:
+- Oma sivu, johon voi syöttää DOI/ACM-tunnisteen.
+- Nappi, joka hakee tunnisteen mukaan tarvittavat tiedot.
+- Lisätty viite näkyy taulukossa.
+
+
 *** Test Cases ***
 
 

@@ -6,6 +6,9 @@ Definition of done = koodi toimii, testit menevät läpi, koodi on siistiä (pyl
 
 [![CI](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml/badge.svg)](https://github.com/tassu60kg/outin-kanat/actions/workflows/main.yml)
 [![codecov](https://codecov.io/github/tassu60kg/outin-kanat/graph/badge.svg?token=X7OHR4MW2M)](https://codecov.io/github/tassu60kg/outin-kanat)
+
+[Raportti] (https://github.com/tassu60kg/outin-kanat/blob/main/raportti.txt)
+
 ## Asennus- ja käyttöohje
 
 PostgreSQL asennusohjeet:

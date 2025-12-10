@@ -1,1 +1,67 @@
-Loppu raportti
+Raportti
+
+
+Projektin osallistujat: Laura Immonen,
+
+
+
+Jokaisen sprintin aikana kohdatut ongelmat:
+
+Sprint 1:
+
+Emme olleet laatineet taskeja tarpeeksi yksityiskohtaisesti tai teknisesti.
+Taskit olivat kirjoitettu hyvin yksinkertaisesti ja liian epämääräisesti. Emme myöskään olleet
+kirjoittanut tarpeeksi hyväksymiskriteerejä user story:ille, mikä teki epäselvää, oliko kaikkea
+asiakkaan haluttua toiminnallisuutta loppupeleissä tehty. Määritelmämme definition of done:sta
+oli myös puutteellinen, joten meille itselemme, eikä asiakkaalle ollut oikein selvää, oliko
+tietty feature oikeasti valmis vai keskeneräinen. Myös kommunikaatiossa oli paljon parantamisen
+varaa ensimmäisen viikon jälkeen, sillä tapasimme tuolloin vain koululla n. 3 kertaa viikossa,
+eivätkä kaikki päässeet aina paikalle, joten saattoi jäädä epäselväksi, mitä kunkin tuli tehdä.
+Ryhmätyön aloittaminen aina hankalaa, kukaan meistä ei ollut ennen koodannut muiden kanssa.
+
+
+Sprint 2:
+
+Huomasimme, että paikanpäällä koodauksessa on myös huonot puolensa, sillä meille alkoi syntyä
+pullonkaulaongelmia. Joku joutui aina odottamaan, että toinen sai oman koodinsa valmiiksi, ennen
+kuin pystyi aloittamaan oman taskinsa.
+
+
+Sprint 3:
+
+Huomattiin, että vaikka parikoodauksessa on hyvät puolensa, olisi tehokkaampaa, jos featureita
+tehdään enemmän myös yksin, ja ns. porrastetusti. Tämä auttoi edeltävän viikon
+pullonkaulaongelmiin. Robot testit oli vielä jaettu tässä kohtaa enemmän yhdelle
+tiimiläiselle, joka joutui odottelemaan featureiden tekoa, ja robot testit aina hajosivat siinä
+kohtaa, kun uusi feature lisättiin. Tästä syystä Github actions:it olivat myös punaisella.
+
+
+Sprint 4:
+
+Sovelluksen ja commit-viestien yhtenäisyys. Sovelluksessa oli paljon asioita, joita tuli
+yhtenäistää, sillä ei oltu keskusteltu tarkkoja kriteereitä tarpeeksi hyvin, joten kaikki eivät
+käyttäneet samoja periaatteita. (esim. kieli, kieliasut, painikkeet, commit-viestit
+eri muodossa yms.) Kaikki pushattu main-haaraan, syntynyt merge konflikteja.
+
+
+
+
+Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten:
+
+Hyvää oli, että jokaisen sprintin jälkeen oli asiakastapaaminen, jossa sai projektista
+palautetta. Asiakas antoi myös aina sopivan määrän user story:ja. Olisimme kuitenkin toivoneet
+enemmän palautetta ja enemmän konkreettista apua tiettyihin ongelmiimme. Jokaisen spintin
+jälkeinen retro osoittautui myös hyvin hyödylliseksi ja paransi ryhmän kommunikaatiota.
+
+
+
+Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
+
+Opin paljon tiimityöskentelystä, työnjaosta ja paransin organisaatio- ja kommunikaatiotaitojani.
+Teknisesti opin hyödyntämään ulkoisia rajapintoja ja hakemaan dataa verkosta,
+sekä käsittelemään sitä omassa sovelluksessa. Olisin itse halunnut oppia enemmän käyttöliittymän
+suunnittelusta ja UI/UX-periaatteista. Aikataulun ja työnjaon takia päädyimme kuitenkin siihen,
+että yksi tiimiläinen toteutti käyttöliittymän viimeisessä sprintissä, mikä oli meille
+toimivin ratkaisu projektin etenemisen kannalta. En usko, että mikään tekemämme oli turhaa, sillä
+kaikki viikottainen miniprojektiin liittyvä työ oli hyvin opettavaista ja varmasti myös
+valmistaa meitä seuraavaa, suurempaa projektia varten. -Laura

@@ -23,14 +23,14 @@ Hyväksymiskriteerit:
 *** Test Cases ***
 Homepage has a link to form
     Go To  ${HOME_URL}
-    Title Should Be  temp
+    Title Should Be  References
     Page Should Contain Link  Add reference
     Click Link  Add reference
     Title Should Be  Add a reference
 
 Homepage has a link to BibTeX page
     Go To  ${HOME_URL}
-    Title Should Be  temp
+    Title Should Be  References
     Page Should Contain Link  Create BibTeX
     Click Link  Create BibTeX
     Title Should Be  BibTeX
@@ -38,7 +38,7 @@ Homepage has a link to BibTeX page
 
 Homepage has a link to add reference with DOI
     Go To  ${HOME_URL}
-    Title Should Be  temp
+    Title Should Be  References
     Page Should Contain Link  Add reference with DOI
     Click Link  Add reference with DOI
     Title Should Be  Add reference with DOI
@@ -55,7 +55,7 @@ User can see BibTeX of all references
     Check Article Reference In BibTeX
     Check Inproceedings Reference In BibTeX
     Click Button    Back
-    Title Should Be    temp
+    Title Should Be    References
 
 User can filter references by tag
     Go To  ${HOME_URL}

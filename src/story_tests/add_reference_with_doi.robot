@@ -50,7 +50,7 @@ User can see BibTeX of all DOI references
     Check DOI Article Reference In BibTeX
     Check DOI Inproceedings Reference In BibTeX
     Click Button    Back
-    Title Should Be    temp
+    Title Should Be    References
 
 
 

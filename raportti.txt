@@ -1,7 +1,7 @@
 Raportti
 
 
-Projektin osallistujat: Laura Immonen,
+Projektin osallistujat: Laura Immonen, Ronja Sonninen
 
 
 
@@ -53,6 +53,10 @@ palautetta. Asiakas antoi myös aina sopivan määrän user story:ja. Olisimme k
 enemmän palautetta ja enemmän konkreettista apua tiettyihin ongelmiimme. Jokaisen spintin
 jälkeinen retro osoittautui myös hyvin hyödylliseksi ja paransi ryhmän kommunikaatiota.
 
+Koodasimme kaikki suoraan main-haaraan, mikä aiheutti välillä ongelmia, kuten merge-konflikteja
+ja sen, että Github Actions oli usein punaisena. Seuraavalla kerralla olisi siis hyvä koodata 
+eri haaroihin ja tehä pull requesteja.
+
 
 
 Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
@@ -65,3 +69,13 @@ että yksi tiimiläinen toteutti käyttöliittymän viimeisessä sprintissä, mi
 toimivin ratkaisu projektin etenemisen kannalta. En usko, että mikään tekemämme oli turhaa, sillä
 kaikki viikottainen miniprojektiin liittyvä työ oli hyvin opettavaista ja varmasti myös
 valmistaa meitä seuraavaa, suurempaa projektia varten. -Laura
+
+Projektin aikana opin ennen kaikkea koodaamaan ryhmässä, sillä se oli minulle — kuten myös muille ryhmäläisille — uusi asia.
+Alkuun jopa jännitti, miten tällainen ryhmäprojekti sujuu, mutta yllätyksekseni oli oikeastaan ihan mukanaa koodata ryhmänä.
+Muutamassa sprintissä kokeilin parikoodaamista, mikä oli oppimisen kannalta hyvä asia, sillä pareittain työskennellessä pystyi
+hyvin hyödyntämään molempien parien taitoja ja koodaaminen oli näin tehokasta.
+Opin myös, millainen Scrum-menetelmä on käytännössä. Sprintit ja työnjako tukivat omaa tekemistä ja aikatauluttamista.
+Kuten myös Laura totesi, niin työnjaon takia kaikki tiimiläiset eivät tehneet kaikkea. Olisi siis ollut kiva esimerkiksi osallistua käyttöliittymän
+suunnitteluun, mutta aikataulullisista syistä oli parempi, että se oli yhden tiimiläisen tehtävänä.
+Mikään ei mielestäni ollut turhaa, vaan päinvastoin kaikki projektin elementit ja tehtävät tukivat oppimista ja 
+kehittymistä koodaajana. —Ronja

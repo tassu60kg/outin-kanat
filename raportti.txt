@@ -1,7 +1,7 @@
 Raportti
 
 
-Projektin osallistujat: Laura Immonen, Ronja Sonninen
+Projektin osallistujat: Laura Immonen, Ronja Sonninen, Matias Sarapalo
 
 
 
@@ -79,3 +79,12 @@ Kuten myös Laura totesi, niin työnjaon takia kaikki tiimiläiset eivät tehnee
 suunnitteluun, mutta aikataulullisista syistä oli parempi, että se oli yhden tiimiläisen tehtävänä.
 Mikään ei mielestäni ollut turhaa, vaan päinvastoin kaikki projektin elementit ja tehtävät tukivat oppimista ja 
 kehittymistä koodaajana. —Ronja
+
+Opin miten tiimissä voi työskennellä eri tavoilla ja kuinka tiimin toimintaa voi kehittää yhdessä.
+Parikoodaus oli siisti kokemus ja minusta se oli oiva tapa koodata, koska ongelmat koodauksen
+aikana ratkesivat nopeammin. Huomasin kuitenkin, että viimeisessä sprintissä kun kaikki koodasivat
+yksin saimme ryhmänä enemmän aikaan. Ensimmäisessä ja toisessa sprintissä oli välillä turhautunut olo,
+kun tapasimme niin usein koululla koko ryhmän voimin, mutta emme saaneet paljon aikaan. Ryhmässä
+työskentely oli kuitenkin mukavaa ja toimintamme kehittyi kokoajan. Projektissa olisi voinut olla 
+vielä yksi viikko lisää, jolloin koko ryhmä olisi päässyt hiomaan käyttöliittymän ulkonäköä ja 
+käyttäjäystävällisyyttä, sekä keksimään luovia ratkaisuja. -Matias

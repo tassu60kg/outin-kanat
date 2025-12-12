@@ -20,6 +20,14 @@ Hyväksymiskriteerit:
 - Painamalla "Näytä viitteet" -nappia, sivu päivittyy näyttämään vain valitulla tagilla merkityt viitteet
 - Suodattimet voi tyhjentää
 
+User Story: Käyttäjänä pystyn suodattamaan tageja BibTeX näkymään.
+
+Hyväksymiskriteerit:
+- Lista tägeistä, jota voi suodattaa.
+- Pystyy valitsemaan listasta haluamansa tägin/tägit.
+- Lista checklist muodossa.
+- BibTeX-sivu näyttää vain tägeillä suodatetut viitteet.
+
 User Story: Käyttäjänä haluan, että sivu on Outin väreissä ja on selkeä + siisti
 
 Hyväksymiskriteerit:

@@ -4,6 +4,13 @@ Suite Setup  Setup Suite
 Suite Teardown  Close Browser
 
 *** Comments ***
+User Story: Käyttäjänä pystyn muokkaamaan viitettä.
+
+Hyväksymiskriteerit:
+- Nappi "Muokkaa viitettä".
+- Pystyy muokkaamaan kaikkia kohtia ja vanhat vastaukset näkyvissä.
+- Pystyy lisäämään ja poistamaan kohtia, muokkauksen jälkeen tulee viesti että tiedot on tallennettu onnistuneesti".
+
 User Story: Käyttäjänä voin lisätä tägin/tägejä viitteelle.
 
 Hyväksymiskriteerit:

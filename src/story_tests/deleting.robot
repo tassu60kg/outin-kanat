@@ -3,6 +3,15 @@ Resource  resource.robot
 Suite Setup  Setup Suite
 Suite Teardown  Close Browser
 
+*** Comments ***
+User Story: Käyttäjänä pystyn poistamaan viitteitä.
+
+Hyväksymiskriteerit:
+- "Nappi "Poista viite".
+- Varmistusviesti ennen poistamista.
+- Nappi on taulukossa viitteen kohdalla.
+- Viitteen tiedot poistuvat".
+
 *** Test Cases ***
 User can delete reference
     Go To  ${HOME_URL}

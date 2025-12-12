@@ -35,6 +35,15 @@ Hyväksymiskriteerit:
 - Nettisivu on selkeä ja helppokäyttöinen
 - Sivuston ulkoasu on yhtenäinen
 
+User story: Käyttäjänä pystyn kopioimaan kaikki viitteet BibTex muodossa
+
+Hyväksymiskriteerit:
+ - "Copy text"-nappi BibTeX sivulla.
+ - BibTexit kopioituu asiakkaan leikepöydälle.
+ - Viesti "References copied".
+
+
+
 *** Test Cases ***
 Homepage has a link to form
     Go To  ${HOME_URL}

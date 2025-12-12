@@ -20,6 +20,13 @@ Hyväksymiskriteerit:
 - Painamalla "Näytä viitteet" -nappia, sivu päivittyy näyttämään vain valitulla tagilla merkityt viitteet
 - Suodattimet voi tyhjentää
 
+User Story: Käyttäjänä haluan, että sivu on Outin väreissä ja on selkeä + siisti
+
+Hyväksymiskriteerit:
+- Nettisivu vastaa tiettyä värimaailmaa
+- Nettisivu on selkeä ja helppokäyttöinen
+- Sivuston ulkoasu on yhtenäinen
+
 *** Test Cases ***
 Homepage has a link to form
     Go To  ${HOME_URL}

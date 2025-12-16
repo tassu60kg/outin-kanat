@@ -1,7 +1,7 @@
 Raportti
 
 
-Projektin osallistujat: Laura Immonen, Ronja Sonninen, Matias Sarapalo
+Projektin osallistujat: Laura Immonen, Ronja Sonninen, Matias Sarapalo, Lotta Toivanen
 
 
 
@@ -51,7 +51,10 @@ Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten:
 Hyvää oli, että jokaisen sprintin jälkeen oli asiakastapaaminen, jossa sai projektista
 palautetta. Asiakas antoi myös aina sopivan määrän user story:ja. Olisimme kuitenkin toivoneet
 enemmän palautetta ja enemmän konkreettista apua tiettyihin ongelmiimme. Jokaisen spintin
-jälkeinen retro osoittautui myös hyvin hyödylliseksi ja paransi ryhmän kommunikaatiota.
+jälkeinen retro osoittautui myös hyvin hyödylliseksi ja paransi ryhmän kommunikaatiota. Projektin 
+edetessä ryhmätyö alkoi sujua hyvin. Alun hitauden jälkeen opimme jakamaan tehtäviä tehokkaammin 
+ja tukemaan toisiamme koodin kanssa. Huomasimme sekä parikoodauksen, että yksilökoodauksen
+hyvät puolet ryhmätyössä.
 
 Koodasimme kaikki suoraan main-haaraan, mikä aiheutti välillä ongelmia, kuten merge-konflikteja
 ja sen, että Github Actions oli usein punaisena. Seuraavalla kerralla olisi siis hyvä koodata 
@@ -88,3 +91,13 @@ kun tapasimme niin usein koululla koko ryhmän voimin, mutta emme saaneet paljon
 työskentely oli kuitenkin mukavaa ja toimintamme kehittyi kokoajan. Projektissa olisi voinut olla 
 vielä yksi viikko lisää, jolloin koko ryhmä olisi päässyt hiomaan käyttöliittymän ulkonäköä ja 
 käyttäjäystävällisyyttä, sekä keksimään luovia ratkaisuja. -Matias
+
+Miniprojekti oli omalta osaltani erittäin opettavainen. En ollut ennen juurikaan koodannut ryhmässä, joten
+opin paljon yhdessä koodaamisesta ja koodin tarkistelusta. Oli todella hienoa nähdä ryhmän kehittymistä sekä
+koodin kanssa, että ryhmänä työskentelyssä. Alku tuntui lähtevän erittäin hitaasti alkuun, mutta kun saimme
+paremman tuntuman ryhmätyöhön, se alkoi rullaamaan huomattavasti paremmin. Miniprojektissa käytetty Scrum myös 
+avasi minulle huomattavasti enemmän sen metodia. Kun luennoilla aluksi siitä ymmärsin joten kuten miten se toimii,
+mutta sen käyttäminen itse avasi sitä huomattavasti enemmän. Olisin halunnut oppia vielä enemmän HTML-tiedostojen
+tekemisestä. Alussa jotenkin "juutuin" tekemään robot- sekä yksikkötestejä, ja loppu puolella projektia, minun
+ei olisi kannattanut lähteä enää opettelemaan sitä, sillä kaikilla muilla oli jo parempi käsitys aikaisemmasta
+koodista. Mielestäni projektissa ei ollut mitään turhaa. –Lotta

@@ -1,7 +1,7 @@
 Raportti
 
 
-Projektin osallistujat: Laura Immonen, Ronja Sonninen, Matias Sarapalo, Lotta Toivanen
+Projektin osallistujat: Laura Immonen, Ronja Sonninen, Matias Sarapalo, Lotta Toivanen, LL
 
 
 
@@ -101,3 +101,11 @@ mutta sen käyttäminen itse avasi sitä huomattavasti enemmän. Olisin halunnut
 tekemisestä. Alussa jotenkin "juutuin" tekemään robot- sekä yksikkötestejä, ja loppu puolella projektia, minun
 ei olisi kannattanut lähteä enää opettelemaan sitä, sillä kaikilla muilla oli jo parempi käsitys aikaisemmasta
 koodista. Mielestäni projektissa ei ollut mitään turhaa. –Lotta
+
+Projektia tehdessäni opin pääosin työskentelemään ryhmässä. Tämä oli minulle uusi kokemus ja sen hyvät sekä huonot puolet 
+tulivat tutuimmiksi. Etenkin parikoodaus oli kiinnostavaa, vaikka huomasimme yksilökoodauksen olevan tehokkaampaa.
+Sprintit, backlogit sekä muut scrumin käytännöt olivat myös täysin uusia. Myös github actionsin käyttö oli uutta.
+Kuten muut ryhmäläiset ovat kirjoittaneet, ryhmäntyönjaon takia kaikki eivät päässeet tekemään kaikkea. 
+Eniten harmittaa etten oppinut tekemään robot-testejä kunnolla. Myös käyttöliittymän visuaalista tyyliä olisin 
+mielelläni tehnyt enemmän. Mikään työ jota teimme ei mielestäni mennyt hukkaan tai ollut muuten turhaa, 
+kaikki mitä teimme siis edisti projektia ja tuki oppimista. -LL
